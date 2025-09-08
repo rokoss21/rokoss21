@@ -28,7 +28,6 @@ This philosophy led to the creation of the **[FACET Language](https://github.com
 My work is centered around the **FACET ecosystem**, a full-stack solution designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer builds upon the last — from a deterministic language foundation to a global-scale AI orchestration engine.
 
 
-[ FACET ] ==> [ MCP ] ==> [ RMCP ]
 
 +-----------------------+  +-----------------------+  +-----------------------+
 |         FACET         |  |          MCP          |  |          RMCP         |
@@ -38,11 +37,6 @@ My work is centered around the **FACET ecosystem**, a full-stack solution design
 | * Pure Lenses         |  | * Streaming I/O       |  | * Multi-Agent Topolog |
 +-----------------------+  +-----------------------+  +-----------------------+
 
-                           +-------------------------------+
-                           |        Shared Services        |
-                           |-------------------------------|
-                           | * Policy  * Artifacts  * Bus  |
-                           +-------------------------------+
 
 
 Each layer is a direct application of the core FACET philosophy:

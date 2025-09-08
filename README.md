@@ -28,29 +28,26 @@ This philosophy led to the creation of the **[FACET Language](https://github.com
 My work is centered around the **FACET ecosystem**, a full-stack solution designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer builds upon the last — from a deterministic language foundation to a global-scale AI orchestration engine.
 
 
-____________________________________________________________________________________________
+$ facetctl diag --arch --wide
+[12:07:53] INFO loading FACET language ......... OK
+[12:07:53] INFO loading MCP runtime ............ OK
+[12:07:54] INFO connecting RMCP orchestrator ... OK
+[12:07:54] INFO shared services: policy | artifacts | event-bus
 
-emil@equilibrium:~/facet $ facetctl diag --arch --wide
-# FACET · MCP · RMCP — overview
-[12:07:53] INFO  loading FACET language .......... OK
-[12:07:53] INFO  loading MCP runtime ............. OK
-[12:07:54] INFO  connecting RMCP orchestrator .... OK
-[12:07:54] INFO  shared services: policy | artifacts | event-bus
++---------------------+    +---------------------+    +----------------------+
+|    FACET Language   | => |      MCP Runtime    | => |   RMCP Orchestrator  |
++---------------------+    +---------------------+    +----------------------+
+| Determinism         |    | Adapters            |    | Scheduler & Queues   |
+| Typed Contracts     |    | Policy & Guards     |    | Tracing & Metrics    |
+| Pure Lenses         |    | Streaming I/O       |    | Multi-Agent Topology |
++---------------------+    +---------------------+    +----------------------+
 
-   FACET Language                  MCP Runtime                      RMCP Orchestrator
- ┌───────────────────────┐      ┌─────────────────────┐           ┌────────────────────────┐
- │ • Determinism         │  →   │ • Adapters          │      →    │ • Scheduler & Queues   │
- │ • Typed Contracts     │      │ • Policy & Guards   │           │ • Tracing & Metrics    │
- │ • Pure Lenses         │      │ • Streaming I/O     │           │ • Multi-Agent Topology │
- └───────────────────────┘      └─────────────────────┘           └────────────────────────┘
-               │                           │                                │
-               └───────────────────────────┴────────────── Shared Services ─┘
-                                             Policy • Artifacts • Event Bus
-
-emil@equilibrium:~/facet $
-
-____________________________________________________________________________________________
-
+                          v
+                +---------------------------+
+                |      Shared Services      |
+                | Policy | Artifacts | Bus  |
+                +---------------------------+
+$
 
 Each layer is a direct application of the core FACET philosophy:
 

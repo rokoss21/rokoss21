@@ -1,18 +1,17 @@
-<table width="100%">
+<table width="100%" border="0" style="border: none; border-collapse: collapse;">
   <tr>
-    <td align="center" valign="middle">
+    <td align="center" valign="middle" style="padding: 10px;">
       <a href="https://github.com/rokoss21/FACET">
         <img src="https://github.com/rokoss21/FACET/blob/main/assets/banner.png?raw=true" alt="FACET Logo" height="200">
       </a>
     </td>
-    <td align="center" valign="middle">
+    <td align="center" valign="middle" style="padding: 10px;">
       <a href="https://github.com/rokoss21/rmcp-protocol">
         <img src="https://github.com/rokoss21/rmcp-protocol/blob/main/assets/logo.png?raw=true" alt="RMCP+FACET: Operating System for AI Ecosystems" height="200">
       </a>
     </td>
   </tr>
 </table>
-
 
 ---
 
@@ -33,21 +32,35 @@ My work is centered around the **FACET ecosystem**, designed to make AI interact
 ### 👑 **[FACET Language](https://github.com/rokoss21/FACET)**
 > The **foundation and source code of the philosophy**. A deterministic markup language for AI instructions, featuring first-class contracts and pure lenses.
 
-**Key Technologies:** <code>Python</code>, <code>Parsing</code>, <code>Language Design</code>
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/Language_Design-007ACC?style=for-the-badge" alt="Language Design">
+  <img src="https://img.shields.io/badge/Parsing-orange?style=for-the-badge" alt="Parsing">
+</p>
 
 ---
 
 ### ⚡ **[FACET MCP Server](https://github.com/rokoss21/FACET_mcp)**
 > The **application layer**. A high-performance, "Agent-First" execution engine that makes the power of FACET accessible to AI agents as a reliable tool.
 
-**Key Technologies:** <code>Python</code>, <code>TypeScript</code>, <code>WebSockets</code>, <code>SIMD</code>
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
+  <img src="https://img.shields.io/badge/WebSockets-000000?style=for-the-badge&logo=websocket&logoColor=white" alt="WebSockets">
+  <img src="https://img.shields.io/badge/SIMD-red?style=for-the-badge" alt="SIMD">
+</p>
 
 ---
 
 ### 🧠 **[FACET Orchestrator (RMCP)](https://github.com/rokoss21/rmcp-protocol)**
 > The **scaling layer**. An AI Operating System & Orchestration Engine that uses the principles of FACET to coordinate entire fleets of AI agents and tools at scale.
 
-**Key Technologies:** <code>Rust</code>, <code>Python</code>, <code>FastAPI</code>, <code>Distributed Systems</code>
+<p>
+  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
+  <img src="https://img.shields.io/badge/Distributed_Systems-blueviolet?style=for-the-badge" alt="Distributed Systems">
+</p>
 
 ---
 

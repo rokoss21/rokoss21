@@ -39,55 +39,91 @@ My work is centered around the **FACET ecosystem**, a full-stack solution design
   }
 }}%%
 flowchart LR
-    %% Foundation
+    %% ========= LAYERS =========
     subgraph F["👑 FACET Language — Deterministic Markup & Contracts"]
         F1["Determinism"]
         F2["Typed Contracts"]
         F3["Pure Lenses"]
+        F4["Parsers & Validators"]
     end
 
-    %% MCP
     subgraph M["⚡ FACET MCP Server — Agent-First Runtime"]
         M1["Tool Adapters"]
         M2["Policy & Guards"]
         M3["Streaming I/O"]
+        M4["Sandboxes & Rate Limits"]
     end
 
-    %% RMCP
     subgraph R["🧠 RMCP Orchestrator — OS-Level Scheduling & Observability"]
-        R1["Scaling & Queues"]
+        R1["Scheduler & Queues"]
         R2["Tracing & Metrics"]
         R3["Multi-Agent Topologies"]
+        R4["Registry & Discovery"]
     end
 
-    %% Main pipeline
-    F --> M --> R
+    %% ========= SHARED / SIDE SERVICES =========
+    subgraph S["Shared Services"]
+        S1["Schema Registry"]
+        S2["Policy Store"]
+        S3["Event Bus / Topics"]
+        S4["Artifacts (Prompts, Lenses, Contracts)"]
+    end
 
-    %% Feature mappings (use ASCII arrows!)
-    F1 -.-> M1
+    %% ========= MAIN FLOW =========
+    F -->|normalized specs| M -->|orchestrated tasks| R
+
+    %% Feature mappings (dashed ribbons)
     F2 -. contracts .-> M2
-    F3 -. structure .-> M3
+    F3 -. structure .-> M1
+    F4 -. validation .-> M4
 
     M1 -. fleet .-> R3
     M2 -. SLOs .-> R2
     M3 -. throughput .-> R1
+    M4 -. registry .-> R4
 
-    %% Styling
+    %% Shared services wiring
+    F4 --- S1
+    M2 --- S2
+    M3 --- S3
+    R1 --- S3
+    F2 --- S4
+    R4 --- S4
+
+    %% Clickable deep-links (внутренние узлы)
+    click F1 "https://github.com/rokoss21/FACET" _blank
+    click F2 "https://github.com/rokoss21/FACET" _blank
+    click M1 "https://github.com/rokoss21/FACET_mcp" _blank
+    click M2 "https://github.com/rokoss21/FACET_mcp" _blank
+    click R1 "https://github.com/rokoss21/rmcp-protocol" _blank
+    click R3 "https://github.com/rokoss21/rmcp-protocol" _blank
+
+    %% ========= STYLES =========
     style F fill:#e3f2fd,stroke:#111827,stroke-width:2px
     style M fill:#e8f5e9,stroke:#111827,stroke-width:2px
     style R fill:#f3e5f5,stroke:#111827,stroke-width:2px
+    style S fill:#fff7ed,stroke:#92400e,stroke-width:1.5px
 
-    style F1 fill:#fff,stroke:#60a5fa
-    style F2 fill:#fff,stroke:#60a5fa
-    style F3 fill:#fff,stroke:#60a5fa
+    style F1 fill:#ffffff,stroke:#60a5fa
+    style F2 fill:#ffffff,stroke:#60a5fa
+    style F3 fill:#ffffff,stroke:#60a5fa
+    style F4 fill:#ffffff,stroke:#60a5fa
 
-    style M1 fill:#fff,stroke:#34d399
-    style M2 fill:#fff,stroke:#34d399
-    style M3 fill:#fff,stroke:#34d399
+    style M1 fill:#ffffff,stroke:#34d399
+    style M2 fill:#ffffff,stroke:#34d399
+    style M3 fill:#ffffff,stroke:#34d399
+    style M4 fill:#ffffff,stroke:#34d399
 
-    style R1 fill:#fff,stroke:#a78bfa
-    style R2 fill:#fff,stroke:#a78bfa
-    style R3 fill:#fff,stroke:#a78bfa
+    style R1 fill:#ffffff,stroke:#a78bfa
+    style R2 fill:#ffffff,stroke:#a78bfa
+    style R3 fill:#ffffff,stroke:#a78bfa
+    style R4 fill:#ffffff,stroke:#a78bfa
+
+    style S1 fill:#ffffff,stroke:#f59e0b
+    style S2 fill:#ffffff,stroke:#f59e0b
+    style S3 fill:#ffffff,stroke:#f59e0b
+    style S4 fill:#ffffff,stroke:#f59e0b
+
  ```
 
 Each layer is a direct application of the core FACET philosophy:

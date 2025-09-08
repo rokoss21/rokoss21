@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://github.com/rokoss21/FACET">
-    <img src="https://github.com/rokoss21/FACET/blob/main/assets/logo.png" alt="FACET Logo" width="100%" height="auto" style="max-width: 500px;">
+    <img src="https://github.com/rokoss21/FACET/assets/logo.png" alt="FACET Logo" width="100%" height="auto" style="max-width: 500px;">
   </a>
 </div>
 

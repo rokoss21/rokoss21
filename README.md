@@ -2,7 +2,7 @@
   <tr>
     <td width="50%" align="center" valign="middle">
       <a href="https://github.com/rokoss21/FACET">
-        <img src="https://github.com/rokoss21/FACET/blob/main/assets/logo.png?raw=true" alt="FACET Logo" width="100%" height="auto" style="max-width: 400px;">
+        <img src="https://github.com/rokoss21/FACET/blob/main/assets/banner.png?raw=true" alt="FACET Logo" width="100%" height="auto" style="max-width: 400px;">
       </a>
     </td>
     <td width="50%" align="center" valign="middle">

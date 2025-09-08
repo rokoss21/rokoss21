@@ -27,7 +27,9 @@ This philosophy led to the creation of the **[FACET Language](https://github.com
 
 My work is centered around the **FACET ecosystem**, a full-stack solution designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer builds upon the last — from a deterministic language foundation to a global-scale AI orchestration engine.
 
+## 📟 Usage Example
 
+```sh
 $ facetctl diag --arch
 [ok] FACET language: determinism | contracts | lenses | parsing
 [ok] MCP runtime:   adapters | guards | streaming | sandboxes
@@ -44,6 +46,7 @@ tips:
   facetctl run  ./specs/app.facet --input input.json
   facetctl logs --follow
 $
+```
 
 
 

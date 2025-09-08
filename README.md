@@ -20,11 +20,32 @@ My focus is on creating deterministic, toolable, and scalable systems that solve
 
 My work is centered around the **FACET ecosystem**, designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. It consists of three core layers:
 
-| Project | Description | Key Technologies |
-| :--- | :--- | :--- |
-| 👑 **[FACET Language](https://github.com/rokoss21/FACET)** | A **deterministic markup language** for AI instructions. Features first-class contracts and pure lenses. The foundation of the ecosystem. | `Python`, `Parsing`, `Language Design` |
-| ⚡ **[FACET MCP Server](https://github.com/rokoss21/FACET_mcp)** | A high-performance, **"Agent-First" execution engine** that provides AI agents with reliable tools for data processing, transformation, and validation. | `Python`, `TypeScript`, `WebSockets`, `SIMD` |
-| 🧠 **[FACET Orchestrator (RMCP)](https://github.com/rokoss21/rmcp-protocol)** | The **AI Operating System & Orchestration Engine** for the ecosystem. Features the "Facet Engine" for intelligent, multi-agent coordination at scale. | `Rust`, `Protocol Design`, `Distributed Systems` |
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th style="width: 25%; text-align: left; padding: 8px; border-bottom: 1px solid #d0d7de;">Project</th>
+      <th style="width: 55%; text-align: left; padding: 8px; border-bottom: 1px solid #d0d7de;">Description</th>
+      <th style="width: 20%; text-align: left; padding: 8px; border-bottom: 1px solid #d0d7de;">Key Technologies</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="padding: 8px; vertical-align: top;">👑 <strong><a href="https://github.com/rokoss21/FACET">FACET Language</a></strong></td>
+      <td style="padding: 8px; vertical-align: top;">A <strong>deterministic markup language</strong> for AI instructions. Features first-class contracts and pure lenses. The foundation of the ecosystem.</td>
+      <td style="padding: 8px; vertical-align: top;"><code>Python</code>, <code>Parsing</code>, <code>Language Design</code></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; vertical-align: top;">⚡ <strong><a href="https://github.com/rokoss21/FACET_mcp">FACET MCP Server</a></strong></td>
+      <td style="padding: 8px; vertical-align: top;">A high-performance, <strong>"Agent-First" execution engine</strong> that provides AI agents with reliable tools for data processing, transformation, and validation.</td>
+      <td style="padding: 8px; vertical-align: top;"><code>Python</code>, <code>TypeScript</code>, <code>WebSockets</code>, <code>SIMD</code></td>
+    </tr>
+    <tr>
+      <td style="padding: 8px; vertical-align: top;">🧠 <strong><a href="https://github.com/rokoss21/rmcp-protocol">FACET Orchestrator (RMCP)</a></strong></td>
+      <td style="padding: 8px; vertical-align: top;">The <strong>AI Operating System & Orchestration Engine</strong> for the ecosystem. Features the "Facet Engine" for intelligent, multi-agent coordination at scale.</td>
+      <td style="padding: 8px; vertical-align: top;"><code>Rust</code>, <code>Protocol Design</code>, <code>Distributed Systems</code></td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 

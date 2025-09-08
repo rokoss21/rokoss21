@@ -25,11 +25,40 @@ This philosophy led to the creation of the **[FACET Language](https://github.com
 
 ### 🚀 The FACET Ecosystem
 
-My work is centered around the **FACET ecosystem**, designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer is a direct application of the core FACET philosophy:
+My work is centered around the **FACET ecosystem**, a full-stack solution designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer builds upon the last — from a deterministic language foundation to a global-scale AI orchestration engine.
+
+<div align="center">
+
+```mermaid
+graph TD
+    subgraph "👑 Foundation Layer"
+        A[<b>FACET Language</b><br><i>Deterministic Markup</i>]
+    end
+
+    subgraph "⚡ Application Layer"
+        B[<b>FACET MCP Server</b><br><i>Agent-First Execution Engine</i>]
+    end
+
+    subgraph "🧠 Scaling Layer"
+        C[<b>FACET Orchestrator (RMCP)</b><br><i>AI Operating System</i>]
+    end
+    
+    A --"Provides Core Principles<br>& Deterministic Guarantees"--> B
+    B --"Is Managed & Scaled By"--> C
+
+    style A fill:#e3f2fd,stroke:#333,stroke-width:2px
+    style B fill:#e8f5e9,stroke:#333,stroke-width:2px
+    style C fill:#f3e5f5,stroke:#333,stroke-width:2px
+````
+
+</div>
+
+Each layer is a direct application of the core FACET philosophy:
 
 ---
 
 ### 👑 **[FACET Language](https://github.com/rokoss21/FACET)**
+
 > The **foundation and source code of the philosophy**. A deterministic markup language for AI instructions, featuring first-class contracts and pure lenses.
 
 <p>
@@ -41,6 +70,7 @@ My work is centered around the **FACET ecosystem**, designed to make AI interact
 ---
 
 ### ⚡ **[FACET MCP Server](https://github.com/rokoss21/FACET_mcp)**
+
 > The **application layer**. A high-performance, "Agent-First" execution engine that makes the power of FACET accessible to AI agents as a reliable tool.
 
 <p>
@@ -53,6 +83,7 @@ My work is centered around the **FACET ecosystem**, designed to make AI interact
 ---
 
 ### 🧠 **[FACET Orchestrator (RMCP)](https://github.com/rokoss21/rmcp-protocol)**
+
 > The **scaling layer**. An AI Operating System & Orchestration Engine that uses the principles of FACET to coordinate entire fleets of AI agents and tools at scale.
 
 <p>
@@ -66,19 +97,20 @@ My work is centered around the **FACET ecosystem**, designed to make AI interact
 
 ### 🛠️ Core Competencies & Skills
 
--   **AI & Machine Learning:** AI Orchestration, Multi-Agent Systems, AI Agent Tooling, Prompt Engineering, Structured Data Extraction.
--   **Platform & Backend Engineering:** High-Performance Computing (SIMD), API Design, Asynchronous Services, Distributed Systems, Systems Programming.
--   **Software Architecture:** Clean Architecture, Protocol Design (MCP), Domain-Driven Design (DDD).
--   **Languages & Ecosystems:**
-    -   **Python:** Expert-level, including performance tuning (Numba, NumPy) and packaging (PyPI).
-    -   **Rust:** Proficient, with a focus on high-performance, memory-safe systems programming.
-    -   **JavaScript/TypeScript:** Proficient, including Node.js and packaging (NPM).
--   **DevOps & Tooling:** CI/CD (GitHub Actions), Docker, Test-Driven Development (TDD), Release Management.
+* **AI & Machine Learning:** AI Orchestration, Multi-Agent Systems, AI Agent Tooling, Prompt Engineering, Structured Data Extraction.
+* **Platform & Backend Engineering:** High-Performance Computing (SIMD), API Design, Asynchronous Services, Distributed Systems, Systems Programming.
+* **Software Architecture:** Clean Architecture, Protocol Design (MCP), Domain-Driven Design (DDD).
+* **Languages & Ecosystems:**
+
+  * **Python:** Expert-level, including performance tuning (Numba, NumPy) and packaging (PyPI).
+  * **Rust:** Proficient, with a focus on high-performance, memory-safe systems programming.
+  * **JavaScript/TypeScript:** Proficient, including Node.js and packaging (NPM).
+* **DevOps & Tooling:** CI/CD (GitHub Actions), Docker, Test-Driven Development (TDD), Release Management.
 
 ---
 
 ### 💬 Let's Connect
 
--   **Email:** `ecsiar@gmail.com`
--   **GitHub Discussions:** Feel free to start a conversation on any of the project repositories.
--   **Contributing:** I welcome contributions to my open-source projects. Check out the `CONTRIBUTING.md` files to get started.
+* **Email:** `ecsiar@gmail.com`
+* **GitHub Discussions:** Feel free to start a conversation on any of the project repositories.
+* **Contributing:** I welcome contributions to my open-source projects. Check out the `CONTRIBUTING.md` files to get started.

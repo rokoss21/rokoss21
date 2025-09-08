@@ -2,12 +2,12 @@
   <tr>
     <td align="center" valign="middle">
       <a href="https://github.com/rokoss21/FACET">
-        <img src="https://github.com/rokoss21/FACET/blob/main/assets/banner.png?raw=true" alt="FACET Logo" height="160">
+        <img src="https://github.com/rokoss21/FACET/blob/main/assets/banner.png?raw=true" alt="FACET Logo" height="200">
       </a>
     </td>
     <td align="center" valign="middle">
       <a href="https://github.com/rokoss21/rmcp-protocol">
-        <img src="https://github.com/rokoss21/rmcp-protocol/blob/main/assets/logo.png?raw=true" alt="RMCP+FACET: Operating System for AI Ecosystems" height="160">
+        <img src="https://github.com/rokoss21/rmcp-protocol/blob/main/assets/logo.png?raw=true" alt="RMCP+FACET: Operating System for AI Ecosystems" height="200">
       </a>
     </td>
   </tr>

@@ -27,60 +27,30 @@ This philosophy led to the creation of the **[FACET Language](https://github.com
 
 My work is centered around the **FACET ecosystem**, a full-stack solution designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer builds upon the last — from a deterministic language foundation to a global-scale AI orchestration engine.
 
-```mermaid
-graph TD
-    %%{init: {'theme': 'base', 'themeVariables': { 'fontFamily': 'system-ui, sans-serif'}}}%%
-    
-    subgraph S["🌐 Shared Services"]
-        direction LR
-        S4["Artifacts<br>(Prompts, Lenses, Contracts)"]
-        S2["Policy Store"]
-        S3["Event Bus / Topics"]
-    end
 
-    subgraph R["🧠 FACET Orchestrator (RMCP) — OS-Level Scheduling"]
-        direction TB
-        R3["Multi-Agent Topologies"]
-        R1["Scheduler & Queues"]
-        R4["Registry & Discovery"]
-        R2["Tracing & Metrics"]
-    end
+____________________________________________________________________________________________
 
-    subgraph M["⚡ FACET MCP Server — Agent-First Runtime"]
-        direction TB
-        M2["Policy & Guards"]
-        M1["Tool Adapters"]
-        M3["Streaming I/O"]
-        M4["Sandboxes & Rate Limits"]
-    end
+emil@equilibrium:~/facet $ facetctl diag --arch --wide
+# FACET · MCP · RMCP — overview
+[12:07:53] INFO  loading FACET language .......... OK
+[12:07:53] INFO  loading MCP runtime ............. OK
+[12:07:54] INFO  connecting RMCP orchestrator .... OK
+[12:07:54] INFO  shared services: policy | artifacts | event-bus
 
-    subgraph F["👑 FACET Language — Deterministic Markup"]
-        direction TB
-        F2["Typed Contracts"]
-        F3["Pure Lenses"]
-        F4["Parsers & Validators"]
-    end
+   FACET Language                  MCP Runtime                      RMCP Orchestrator
+ ┌───────────────────────┐      ┌─────────────────────┐           ┌────────────────────────┐
+ │ • Determinism         │  →   │ • Adapters          │      →    │ • Scheduler & Queues   │
+ │ • Typed Contracts     │      │ • Policy & Guards   │           │ • Tracing & Metrics    │
+ │ • Pure Lenses         │      │ • Streaming I/O     │           │ • Multi-Agent Topology │
+ └───────────────────────┘      └─────────────────────┘           └────────────────────────┘
+               │                           │                                │
+               └───────────────────────────┴────────────── Shared Services ─┘
+                                             Policy • Artifacts • Event Bus
 
-    %% Main Flow & Connections
-    F -- "Provides<br>Deterministic<br>Guarantees" --> M
-    M -- "Provides<br>Agent Fleet<br>for Orchestration" --> R
-    R -- "Coordinates Ecosystem<br>via Shared Services" --> S
-    
-    %% Detailed Connections
-    F2 -.-> M2
-    F3 -.-> M1
-    F4 -.-> M4
-    M2 -.-> S2
-    M3 -.-> S3
-    R1 -.-> S3
-    R4 -.-> S4
+emil@equilibrium:~/facet $
 
-    %% Styles
-    style F fill:#e3f2fd,stroke:#1e3a8a,stroke-width:2px
-    style M fill:#e8f5e9,stroke:#166534,stroke-width:2px
-    style R fill:#f3e5f5,stroke:#581c87,stroke-width:2px
-    style S fill:#fff7ed,stroke:#92400e,stroke-width:2px
- ```
+____________________________________________________________________________________________
+
 
 Each layer is a direct application of the core FACET philosophy:
 

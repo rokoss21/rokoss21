@@ -7,7 +7,7 @@
     </td>
     <td width="50%" align="center" valign="middle">
       <a href="https://github.com/rokoss21/rmcp-protocol">
-        <img src="https://github.com/rokoss21/rmcp-protocol/blob/main/assets/banner.png?raw=true" alt="RMCP+FACET: Operating System for AI Ecosystems" width="100%" height="auto" style="max-width: 400px;">
+        <img src="https://github.com/rokoss21/rmcp-protocol/blob/main/assets/logo.png?raw=true" alt="RMCP+FACET: Operating System for AI Ecosystems" width="100%" height="auto" style="max-width: 400px;">
       </a>
     </td>
   </tr>

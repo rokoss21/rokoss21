@@ -1,53 +1,52 @@
-# Emil Rokossovskiy | AI & Platform Engineer
-
-<div align="center">
-  <a href="https://github.com/rokoss21/FACET">
-    <img src="https://github.com/rokoss21/FACET/blob/main/assets/logo.png?raw=true" alt="FACET Logo" width="100%" height="auto" style="max-width: 500px;">
-  </a>
-</div>
+<table width="100%">
+  <tr>
+    <td width="50%" align="center" valign="middle">
+      <a href="https://github.com/rokoss21/FACET">
+        <img src="https://github.com/rokoss21/FACET/blob/main/assets/logo.png?raw=true" alt="FACET Logo" width="100%" height="auto" style="max-width: 400px;">
+      </a>
+    </td>
+    <td width="50%" align="center" valign="middle">
+      <a href="https://github.com/rokoss21/rmcp-protocol">
+        <img src="https://github.com/rokoss21/rmcp-protocol/blob/main/assets/banner.png?raw=true" alt="RMCP+FACET: Operating System for AI Ecosystems" width="100%" height="auto" style="max-width: 400px;">
+      </a>
+    </td>
+  </tr>
+</table>
 
 ---
 
 ### 👋 About Me
 
-I am an AI and Platform Engineer passionate about building the full stack of reliable, high-performance developer tools — from low-level communication protocols to high-level declarative languages. My work bridges the gap between creative AI potential and production-grade engineering rigor.
+I am an AI and Platform Engineer passionate about building developer tools founded on the principles of **determinism, predictability, and engineering rigor**. My work bridges the gap between creative AI potential and the reliability required for production systems.
 
-My focus is on creating deterministic, toolable, and scalable systems that solve real-world problems for developers and AI agents alike.
+This philosophy led to the creation of the **[FACET Language](https://github.com/rokoss21/FACET)**, a deterministic foundation upon which a larger ecosystem of high-performance AI tools is built.
 
 ---
 
 ### 🚀 The FACET Ecosystem
 
-My work is centered around the **FACET ecosystem**, designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. It consists of three core layers:
+My work is centered around the **FACET ecosystem**, designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer is a direct application of the core FACET philosophy:
 
-<br>
-<table style="width: 100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th style="min-width: 280px; text-align: left; padding: 8px; border-bottom: 1px solid #d0d7de;">Project</th>
-      <th style="text-align: left; padding: 8px; border-bottom: 1px solid #d0d7de;">Description</th>
-      <th style="min-width: 180px; text-align: left; padding: 8px; border-bottom: 1px solid #d0d7de;">Key Technologies</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding: 8px; vertical-align: top;">👑 <strong><a href="https://github.com/rokoss21/FACET">FACET Language</a></strong></td>
-      <td style="padding: 8px; vertical-align: top;">A <strong>deterministic markup language</strong> for AI instructions. Features first-class contracts and pure lenses. The foundation of the ecosystem.</td>
-      <td style="padding: 8px; vertical-align: top;"><code>Python</code>, <code>Parsing</code>, <code>Language Design</code></td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; vertical-align: top;">⚡ <strong><a href="https://github.com/rokoss21/FACET_mcp">FACET MCP Server</a></strong></td>
-      <td style="padding: 8px; vertical-align: top;">A high-performance, <strong>"Agent-First" execution engine</strong> that provides AI agents with reliable tools for data processing, transformation, and validation.</td>
-      <td style="padding: 8px; vertical-align: top;"><code>Python</code>, <code>TypeScript</code>, <code>WebSockets</code>, <code>SIMD</code></td>
-    </tr>
-    <tr>
-      <td style="padding: 8px; vertical-align: top;">🧠 <strong><a href="https://github.com/rokoss21/rmcp-protocol">FACET Orchestrator (RMCP)</a></strong></td>
-      <td style="padding: 8px; vertical-align: top;">The <strong>AI Operating System & Orchestration Engine</strong> for the ecosystem. Features the "Facet Engine" for intelligent, multi-agent coordination at scale.</td>
-      <td style="padding: 8px; vertical-align: top;"><code>Rust</code>, <code>Protocol Design</code>, <code>Distributed Systems</code></td>
-    </tr>
-  </tbody>
-</table>
-<br>
+---
+
+### 👑 **[FACET Language](https://github.com/rokoss21/FACET)**
+> The **foundation and source code of the philosophy**. A deterministic markup language for AI instructions, featuring first-class contracts and pure lenses.
+
+**Key Technologies:** <code>Python</code>, <code>Parsing</code>, <code>Language Design</code>
+
+---
+
+### ⚡ **[FACET MCP Server](https://github.com/rokoss21/FACET_mcp)**
+> The **application layer**. A high-performance, "Agent-First" execution engine that makes the power of FACET accessible to AI agents as a reliable tool.
+
+**Key Technologies:** <code>Python</code>, <code>TypeScript</code>, <code>WebSockets</code>, <code>SIMD</code>
+
+---
+
+### 🧠 **[FACET Orchestrator (RMCP)](https://github.com/rokoss21/rmcp-protocol)**
+> The **scaling layer**. An AI Operating System & Orchestration Engine that uses the principles of FACET to coordinate entire fleets of AI agents and tools at scale.
+
+**Key Technologies:** <code>Rust</code>, <code>Python</code>, <code>FastAPI</code>, <code>Distributed Systems</code>
 
 ---
 
@@ -55,7 +54,7 @@ My work is centered around the **FACET ecosystem**, designed to make AI interact
 
 -   **AI & Machine Learning:** AI Orchestration, Multi-Agent Systems, AI Agent Tooling, Prompt Engineering, Structured Data Extraction.
 -   **Platform & Backend Engineering:** High-Performance Computing (SIMD), API Design, Asynchronous Services, Distributed Systems, Systems Programming.
--   **Software Architecture:** Clean Architecture, Protocol Design (MCP/gRPC), Domain-Driven Design (DDD).
+-   **Software Architecture:** Clean Architecture, Protocol Design (MCP), Domain-Driven Design (DDD).
 -   **Languages & Ecosystems:**
     -   **Python:** Expert-level, including performance tuning (Numba, NumPy) and packaging (PyPI).
     -   **Rust:** Proficient, with a focus on high-performance, memory-safe systems programming.

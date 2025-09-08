@@ -48,7 +48,7 @@ flowchart TD
     style A fill:#e3f2fd,stroke:#333,stroke-width:2px
     style B fill:#e8f5e9,stroke:#333,stroke-width:2px
     style C fill:#f3e5f5,stroke:#333,stroke-width:2px
-
+ ```
 
 Each layer is a direct application of the core FACET philosophy:
 

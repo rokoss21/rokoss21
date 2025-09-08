@@ -30,25 +30,35 @@ My work is centered around the **FACET ecosystem**, a full-stack solution design
 
 ```sh
 $ facetctl diag --arch --wide
-[12:07:53] INFO loading FACET language ......... OK
-[12:07:53] INFO loading MCP runtime ............ OK
-[12:07:54] INFO connecting RMCP orchestrator ... OK
-[12:07:54] INFO shared services: policy | artifacts | event-bus
+[12:07:53] INFO  loading FACET language ............. OK
+[12:07:53] INFO  loading MCP runtime ................ OK
+[12:07:54] INFO  connecting RMCP orchestrator ....... OK
+[12:07:54] INFO  shared services: policy | artifacts | event-bus
 
-+---------------------+    +---------------------+    +----------------------+
-|    FACET Language   | => |      MCP Runtime    | => |   RMCP Orchestrator  |
-+---------------------+    +---------------------+    +----------------------+
-| Determinism         |    | Adapters            |    | Scheduler & Queues   |
-| Typed Contracts     |    | Policy & Guards     |    | Tracing & Metrics    |
-| Pure Lenses         |    | Streaming I/O       |    | Multi-Agent Topology |
-+---------------------+    +---------------------+    +----------------------+
++-----------------------+  +-----------------------+  +-----------------------+
+|     FACET Language    |  |      MCP Runtime      |  |   RMCP Orchestrator   |
++-----------------------+  +-----------------------+  +-----------------------+
+| Deterministic grammar |  | Execute FACET (SIMD)  |  | 3-stage planner       |
+| Pure lenses (|>)      |  | Apply lenses (det.)   |  | FastAPI gateway       |
+| Output contracts      |  | Validate JSON schema  |  | Prometheus metrics    |
+| Canonical JSON        |  | WebSocket MCP         |  | Orchestrates agents   |
++-----------------------+  +-----------------------+  +-----------------------+
 
-                          v
-                +---------------------------+
-                |      Shared Services      |
-                | Policy | Artifacts | Bus  |
-                +---------------------------+
++-----------------------+  +-----------------------+  +-----------------------+
+|      Policy Store     |  |   Artifact Registry   |  |     Event Bus / IO    |
++-----------------------+  +-----------------------+  +-----------------------+
+| RBAC & approvals      |  | Prompts & lenses      |  | Topics & queueing     |
+| Guard rules           |  | Contracts & schemas   |  | Tool events           |
+| Audit logs            |  | Versioning            |  | Tracing spans         |
+| Config mgmt           |  | Reusable modules      |  | Telemetry             |
++-----------------------+  +-----------------------+  +-----------------------+
+
+tips:
+  facetctl lint ./specs/app.facet
+  facetctl run  ./specs/app.facet --input input.json
+  facetctl logs --follow
 $
+
 ```
 
 Each layer is a direct application of the core FACET philosophy:

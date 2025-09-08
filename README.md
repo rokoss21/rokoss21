@@ -10,30 +10,32 @@
 
 ### 👋 About Me
 
-I am an AI and Platform Engineer passionate about building reliable, high-performance developer tools that bridge the gap between creative AI potential and production-grade engineering rigor. My focus is on creating deterministic, toolable, and scalable systems that solve real-world problems for developers and AI agents alike.
+I am an AI and Platform Engineer passionate about building the full stack of reliable, high-performance developer tools — from low-level communication protocols to high-level declarative languages. My work bridges the gap between creative AI potential and production-grade engineering rigor.
 
-I believe in making complex systems simple, predictable, and a joy to use.
+My focus is on creating deterministic, toolable, and scalable systems that solve real-world problems for developers and AI agents alike.
 
 ---
 
-### 🚀 My Flagship Projects
+### 🚀 The FACET Ecosystem
 
-My work is currently centered around the **FACET ecosystem**, designed to make AI interactions as rigorous and reliable as API contracts.
+My work is centered around the **FACET ecosystem**, designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. It consists of three core layers:
 
 | Project | Description | Key Technologies |
 | :--- | :--- | :--- |
-| 👑 **[FACET Language](https://github.com/rokoss21/FACET)** | A deterministic markup language for AI instructions, featuring first-class contracts, pure lenses, and a canonical JSON representation. The foundation of the ecosystem. | `Python`, `Parsing`, `Language Design` |
-| ⚡ **[FACET MCP Server](https://github.com/rokoss21/FACET_mcp)** | A high-performance, **"Agent-First"** execution engine that provides AI agents with reliable tools for data processing, transformation, and validation. | `Python`, `TypeScript`, `AsyncIO`, `WebSockets`, `SIMD Optimization` |
+| 👑 **[FACET Language](https://github.com/rokoss21/FACET)** | A **deterministic markup language** for AI instructions. Features first-class contracts and pure lenses. The foundation of the ecosystem. | `Python`, `Parsing`, `Language Design` |
+| ⚡ **[FACET MCP Server](https://github.com/rokoss21/FACET_mcp)** | A high-performance, **"Agent-First" execution engine** that provides AI agents with reliable tools for data processing, transformation, and validation. | `Python`, `TypeScript`, `WebSockets`, `SIMD` |
+| 🧠 **[FACET Orchestrator (RMCP)](https://github.com/rokoss21/rmcp-protocol)** | The **AI Operating System & Orchestration Engine** for the ecosystem. Features the "Facet Engine" for intelligent, multi-agent coordination at scale. | `Rust`, `Protocol Design`, `Distributed Systems` |
 
 ---
 
 ### 🛠️ Core Competencies & Skills
 
--   **AI & Machine Learning:** AI Agent Tooling, Prompt Engineering, Structured Data Extraction, LLM Integration.
--   **Platform & Backend Engineering:** High-Performance Computing (SIMD), API Design, Asynchronous Services, Distributed Systems.
--   **Software Architecture:** Clean Architecture, Domain-Driven Design (DDD), Protocol Design (MCP/gRPC).
+-   **AI & Machine Learning:** AI Orchestration, Multi-Agent Systems, AI Agent Tooling, Prompt Engineering, Structured Data Extraction.
+-   **Platform & Backend Engineering:** High-Performance Computing (SIMD), API Design, Asynchronous Services, Distributed Systems, Systems Programming.
+-   **Software Architecture:** Clean Architecture, Protocol Design (MCP/gRPC), Domain-Driven Design (DDD).
 -   **Languages & Ecosystems:**
     -   **Python:** Expert-level, including performance tuning (Numba, NumPy) and packaging (PyPI).
+    -   **Rust:** Proficient, with a focus on high-performance, memory-safe systems programming.
     -   **JavaScript/TypeScript:** Proficient, including Node.js and packaging (NPM).
 -   **DevOps & Tooling:** CI/CD (GitHub Actions), Docker, Test-Driven Development (TDD), Release Management.
 
@@ -42,5 +44,5 @@ My work is currently centered around the **FACET ecosystem**, designed to make A
 ### 💬 Let's Connect
 
 -   **Email:** `ecsiar@gmail.com`
--   **GitHub Discussions:** Feel free to start a conversation on the [FACET MCP Server](https://github.com/rokoss21/FACET_mcp/discussions) or [FACET Language](https://github.com/rokoss21/FACET/discussions) repositories.
--   **Contributing:** I welcome contributions to my open-source projects. Check out the `CONTRIBUTING.md` files in the repositories to get started.
+-   **GitHub Discussions:** Feel free to start a conversation on any of the project repositories.
+-   **Contributing:** I welcome contributions to my open-source projects. Check out the `CONTRIBUTING.md` files to get started.

@@ -27,31 +27,27 @@ This philosophy led to the creation of the **[FACET Language](https://github.com
 
 My work is centered around the **FACET ecosystem**, a full-stack solution designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer builds upon the last — from a deterministic language foundation to a global-scale AI orchestration engine.
 
-<div align="center">
-
-```mermaid
-graph TD
+%%{init: {"flowchart": {"htmlLabels": false}} }%%
+flowchart TD
     subgraph "👑 Foundation Layer"
-        A[<b>FACET Language</b><br><i>Deterministic Markup</i>]
+        A["FACET Language\nDeterministic Markup"]
     end
 
     subgraph "⚡ Application Layer"
-        B[<b>FACET MCP Server</b><br><i>Agent-First Execution Engine</i>]
+        B["FACET MCP Server\nAgent-First Execution Engine"]
     end
 
     subgraph "🧠 Scaling Layer"
-        C[<b>FACET Orchestrator (RMCP)</b><br><i>AI Operating System</i>]
+        C["FACET Orchestrator (RMCP)\nAI Operating System"]
     end
-    
-    A --"Provides Core Principles<br>& Deterministic Guarantees"--> B
-    B --"Is Managed & Scaled By"--> C
+
+    A -->|Provides core principles & deterministic guarantees| B
+    B -->|Managed & scaled by| C
 
     style A fill:#e3f2fd,stroke:#333,stroke-width:2px
     style B fill:#e8f5e9,stroke:#333,stroke-width:2px
     style C fill:#f3e5f5,stroke:#333,stroke-width:2px
-````
 
-</div>
 
 Each layer is a direct application of the core FACET philosophy:
 

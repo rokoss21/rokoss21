@@ -63,19 +63,14 @@ flowchart LR
     %% Main pipeline
     F --> M --> R
 
-    %% Feature mappings
-    F1 -.→ M1
-    F2 -. contracts .→ M2
-    F3 -. structure .→ M3
+    %% Feature mappings (use ASCII arrows!)
+    F1 -.-> M1
+    F2 -. contracts .-> M2
+    F3 -. structure .-> M3
 
-    M1 -. fleet .→ R3
-    M2 -. SLOs .→ R2
-    M3 -. throughput .→ R1
-
-    %% Clickable links
-    click F "https://github.com/rokoss21/FACET" _blank
-    click M "https://github.com/rokoss21/FACET_mcp" _blank
-    click R "https://github.com/rokoss21/rmcp-protocol" _blank
+    M1 -. fleet .-> R3
+    M2 -. SLOs .-> R2
+    M3 -. throughput .-> R1
 
     %% Styling
     style F fill:#e3f2fd,stroke:#111827,stroke-width:2px
@@ -93,7 +88,6 @@ flowchart LR
     style R1 fill:#fff,stroke:#a78bfa
     style R2 fill:#fff,stroke:#a78bfa
     style R3 fill:#fff,stroke:#a78bfa
-
  ```
 
 Each layer is a direct application of the core FACET philosophy:

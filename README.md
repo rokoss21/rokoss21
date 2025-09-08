@@ -29,13 +29,13 @@ My work is centered around the **FACET ecosystem**, a full-stack solution design
 
 
 
-+-----------------------+  +-----------------------+  +-----------------------+
-|         FACET         |  |          MCP          |  |          RMCP         |
-|-----------------------|  |-----------------------|  |-----------------------|
-| * Determinism         |  | * Adapters            |  | * Scheduler & Queues  |
-| * Typed Contracts     |  | * Policy & Guards     |  | * Tracing & Metrics   |
-| * Pure Lenses         |  | * Streaming I/O       |  | * Multi-Agent Topolog |
-+-----------------------+  +-----------------------+  +-----------------------+
++-----------------------+  +-----------------------+ 
+|         FACET         |  |          MCP          | 
+|-----------------------|  |-----------------------|  
+| * Determinism         |  | * Adapters            |  
+| * Typed Contracts     |  | * Policy & Guards     |  
+| * Pure Lenses         |  | * Streaming I/O       |  
++-----------------------+  +-----------------------+  
 
 
 

@@ -32,61 +32,68 @@ My work is centered around the **FACET ecosystem**, a full-stack solution design
   "flowchart": { "htmlLabels": false, "curve": "basis" },
   "theme": "base",
   "themeVariables": {
-    "fontFamily": "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans",
-    "primaryColor": "#eef2ff",
-    "primaryBorderColor": "#1f2937",
-    "primaryTextColor": "#0f172a",
-    "lineColor": "#1f2937"
+    "fontFamily": "ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu",
+    "primaryBorderColor": "#111827",
+    "primaryTextColor": "#111827",
+    "lineColor": "#374151"
   }
 }}%%
 flowchart LR
-    subgraph F["👑 FACET Language\n— Deterministic Markup, Contracts, Pure Lenses —"]
+    %% Foundation
+    subgraph F["👑 FACET Language — Deterministic Markup & Contracts"]
         F1["Determinism"]
         F2["Typed Contracts"]
         F3["Pure Lenses"]
     end
 
-    subgraph M["⚡ FACET MCP Server\n— Agent-First Runtime —"]
+    %% MCP
+    subgraph M["⚡ FACET MCP Server — Agent-First Runtime"]
         M1["Tool Adapters"]
         M2["Policy & Guards"]
         M3["Streaming I/O"]
     end
 
-    subgraph R["🧠 RMCP Orchestrator\n— OS-Level Scheduling & Observability —"]
+    %% RMCP
+    subgraph R["🧠 RMCP Orchestrator — OS-Level Scheduling & Observability"]
         R1["Scaling & Queues"]
         R2["Tracing & Metrics"]
         R3["Multi-Agent Topologies"]
     end
 
-    F ===> M ===> R
+    %% Main pipeline
+    F --> M --> R
 
-    %% Feature at-a-glance ribbons
-    F1 -. anchors .-> M1
-    F2 -. contracts .-> M2
-    F3 -. structure .-> M3
-    M1 -. fleet .-> R3
-    M2 -. SLOs .-> R2
-    M3 -. throughput .-> R1
+    %% Feature mappings
+    F1 -.→ M1
+    F2 -. contracts .→ M2
+    F3 -. structure .→ M3
 
-    %% Clickable main blocks
-    click F "https://github.com/rokoss21/FACET" "Open FACET Language repo" _blank
-    click M "https://github.com/rokoss21/FACET_mcp" "Open FACET MCP Server repo" _blank
-    click R "https://github.com/rokoss21/rmcp-protocol" "Open RMCP Orchestrator repo" _blank
+    M1 -. fleet .→ R3
+    M2 -. SLOs .→ R2
+    M3 -. throughput .→ R1
+
+    %% Clickable links
+    click F "https://github.com/rokoss21/FACET" _blank
+    click M "https://github.com/rokoss21/FACET_mcp" _blank
+    click R "https://github.com/rokoss21/rmcp-protocol" _blank
 
     %% Styling
-    style F fill:#e3f2fd,stroke:#1f2937,stroke-width:2px
-    style M fill:#e8f5e9,stroke:#1f2937,stroke-width:2px
-    style R fill:#f3e5f5,stroke:#1f2937,stroke-width:2px
+    style F fill:#e3f2fd,stroke:#111827,stroke-width:2px
+    style M fill:#e8f5e9,stroke:#111827,stroke-width:2px
+    style R fill:#f3e5f5,stroke:#111827,stroke-width:2px
 
-    style F1 fill:#ffffff,stroke:#60a5fa
-    style F2 fill:#ffffff,stroke:#60a5fa
-    style F3 fill:#ffffff,stroke:#60a5fa
-    style M1 fill:#ffffff,stroke:#34d399
-    style M2 fill:#ffffff,stroke:#34d399
-    style M3 fill:#ffffff,stroke:#34d399
-    style R1 fill:#ffffff,stroke:#c084fc
-    style R2 fill:#ffffff,stroke:#c084fc
-    style R3 fill:#ffffff,stroke:#c084fc
+    style F1 fill:#fff,stroke:#60a5fa
+    style F2 fill:#fff,stroke:#60a5fa
+    style F3 fill:#fff,stroke:#60a5fa
+
+    style M1 fill:#fff,stroke:#34d399
+    style M2 fill:#fff,stroke:#34d399
+    style M3 fill:#fff,stroke:#34d399
+
+    style R1 fill:#fff,stroke:#a78bfa
+    style R2 fill:#fff,stroke:#a78bfa
+    style R3 fill:#fff,stroke:#a78bfa
+
  ```
 
 Each layer is a direct application of the core FACET philosophy:

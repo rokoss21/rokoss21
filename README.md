@@ -23,8 +23,8 @@ My work is centered around the **FACET ecosystem**, designed to make AI interact
 <table style="width: 100%; border-collapse: collapse;">
   <thead>
     <tr>
-      <th style="width: 25%; text-align: left; padding: 8px; border-bottom: 1px solid #d0d7de;">Project</th>
-      <th style="width: 55%; text-align: left; padding: 8px; border-bottom: 1px solid #d0d7de;">Description</th>
+      <th style="width: 30%; text-align: left; padding: 8px; border-bottom: 1px solid #d0d7de;">Project</th>
+      <th style="width: 50%; text-align: left; padding: 8px; border-bottom: 1px solid #d0d7de;">Description</th>
       <th style="width: 20%; text-align: left; padding: 8px; border-bottom: 1px solid #d0d7de;">Key Technologies</th>
     </tr>
   </thead>

@@ -28,14 +28,23 @@ This philosophy led to the creation of the **[FACET Language](https://github.com
 My work is centered around the **FACET ecosystem**, a full-stack solution designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer builds upon the last — from a deterministic language foundation to a global-scale AI orchestration engine.
 
 
+$ facetctl diag --arch
+[ok] FACET language: determinism | contracts | lenses | parsing
+[ok] MCP runtime:   adapters | guards | streaming | sandboxes
+[ok] RMCP:          scheduler | metrics | topology | registry
+[ok] shared:        policy | artifacts | event-bus
 
-+-----------------------+  +-----------------------+ 
-|         FACET         |  |          MCP          | 
-|-----------------------|  |-----------------------|  
-| * Determinism         |  | * Adapters            |  
-| * Typed Contracts     |  | * Policy & Guards     |  
-| * Pure Lenses         |  | * Streaming I/O       |  
-+-----------------------+  +-----------------------+  
+flow:
+  FACET  ->  MCP  ->  RMCP
+    specs -> runtime -> orchestration
+  shared: policy, artifacts, bus (used by all layers)
+
+tips:
+  facetctl lint ./specs/app.facet
+  facetctl run  ./specs/app.facet --input input.json
+  facetctl logs --follow
+$
+
 
 
 

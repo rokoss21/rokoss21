@@ -27,7 +27,6 @@ This philosophy led to the creation of the **[FACET Language](https://github.com
 
 My work is centered around the **FACET ecosystem**, a full-stack solution designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer builds upon the last — from a deterministic language foundation to a global-scale AI orchestration engine.
 
-
 ```sh
 $ facetctl diag --arch --wide
 [12:07:53] INFO  loading FACET language ............. OK
@@ -73,6 +72,19 @@ Each layer is a direct application of the core FACET philosophy:
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Language_Design-007ACC?style=for-the-badge" alt="Language Design">
   <img src="https://img.shields.io/badge/Parsing-orange?style=for-the-badge" alt="Parsing">
+</p>
+
+---
+
+### 🤖 **[FACET Agents Ecosystem](https://github.com/rokoss21/FACET-AGENTS)**
+
+> The **practical application layer**. A comprehensive collection of specialized AI agents demonstrating FACET's power in real-world scenarios, featuring self-evolving orchestration and intelligent task decomposition.
+
+<p>
+  <img src="https://img.shields.io/badge/Agents-15+-blue?style=for-the-badge" alt="15+ Agents">
+  <img src="https://img.shields.io/badge/Self--Evolving-purple?style=for-the-badge" alt="Self-Evolving">
+  <img src="https://img.shields.io/badge/Multi--Agent-green?style=for-the-badge" alt="Multi-Agent">
+  <img src="https://img.shields.io/badge/Orchestrator-v2.1.0-orange?style=for-the-badge" alt="Orchestrator v2.1.0">
 </p>
 
 ---

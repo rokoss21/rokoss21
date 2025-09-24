@@ -48,7 +48,7 @@ $ facetctl diag --arch --wide
 | Deterministic grammar |  | Static site generator |  | 3-stage planner       |
 | Pure lenses (|>)      |  | HTML/Markdown render  |  | FastAPI gateway       |
 | Output contracts      |  | PyPI package ready   |  | Prometheus metrics    |
-| Canonical JSON        |  | Jinja2 templating    |  | Orchestrates agents   |
+| Canonical JSON        |  | Direct HTML render   |  | Orchestrates agents   |
 +-----------------------+  +-----------------------+  +-----------------------+
 
 +-----------------------+  +-----------------------+  +-----------------------+
@@ -118,7 +118,6 @@ Each layer is a direct application of the core FACET philosophy:
 <p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/PyPI-v1.1.0-blue?style=for-the-badge&logo=pypi&logoColor=white" alt="PyPI v1.1.0">
-  <img src="https://img.shields.io/badge/Jinja2-B4A732?style=for-the-badge&logo=jinja&logoColor=white" alt="Jinja2">
   <img src="https://img.shields.io/badge/Deterministic-green?style=for-the-badge" alt="Deterministic">
 </p>
 

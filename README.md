@@ -43,12 +43,12 @@ $ facetctl diag --arch --wide
 [12:07:54] INFO  shared services: policy | artifacts | event-bus
 
 +-----------------------+  +-----------------------+  +-----------------------+
-|     FACET Language    |  |      MCP Runtime      |  |   RMCP Orchestrator   |
+|     FACET Language    |  |      FSSG Publisher   |  |   RMCP Orchestrator   |
 +-----------------------+  +-----------------------+  +-----------------------+
-| Deterministic grammar |  | Execute FACET (SIMD)  |  | 3-stage planner       |
-| Pure lenses (|>)      |  | Apply lenses (det.)   |  | FastAPI gateway       |
-| Output contracts      |  | Validate JSON schema  |  | Prometheus metrics    |
-| Canonical JSON        |  | WebSocket MCP         |  | Orchestrates agents   |
+| Deterministic grammar |  | Static site generator |  | 3-stage planner       |
+| Pure lenses (|>)      |  | HTML/Markdown render  |  | FastAPI gateway       |
+| Output contracts      |  | PyPI package ready   |  | Prometheus metrics    |
+| Canonical JSON        |  | Jinja2 templating    |  | Orchestrates agents   |
 +-----------------------+  +-----------------------+  +-----------------------+
 
 +-----------------------+  +-----------------------+  +-----------------------+
@@ -63,6 +63,7 @@ $ facetctl diag --arch --wide
 tips:
   facetctl lint ./specs/app.facet
   facetctl run  ./specs/app.facet --input input.json
+  fssg build -c site.config.json
   facetctl logs --follow
 $
 
@@ -106,6 +107,19 @@ Each layer is a direct application of the core FACET philosophy:
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
   <img src="https://img.shields.io/badge/WebSockets-000000?style=for-the-badge&logo=websocket&logoColor=white" alt="WebSockets">
   <img src="https://img.shields.io/badge/SIMD-red?style=for-the-badge" alt="SIMD">
+</p>
+
+---
+
+### 📄 **[FSSG - FACET Static Site Generator](https://github.com/rokoss21/FACET-FSSG)**
+
+> The **publishing layer**. A deterministic static site generator that consumes FACET canonical JSON to production-grade websites, documentation, and artifacts. Ensures byte-for-byte identical builds with complete audit trails.
+
+<p>
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/PyPI-v1.1.0-blue?style=for-the-badge&logo=pypi&logoColor=white" alt="PyPI v1.1.0">
+  <img src="https://img.shields.io/badge/Jinja2-B4A732?style=for-the-badge&logo=jinja&logoColor=white" alt="Jinja2">
+  <img src="https://img.shields.io/badge/Deterministic-green?style=for-the-badge" alt="Deterministic">
 </p>
 
 ---

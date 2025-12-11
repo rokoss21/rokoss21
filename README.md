@@ -28,12 +28,13 @@ This moment proved the core philosophy: when you provide AI with structure, it d
 **My goal is to build the operating system for the future of AI. If this vision resonates with you, I invite you to explore the ecosystem, starting with the agents themselves.**
 
 *   **To see what's possible, start here:** 🚀 **[FACET Agents Ecosystem](https://github.com/rokoss21/FACET-AGENTS)**
+*   **To dive deep into the compiler, see:** 🦀 **[FACET Compiler](https://github.com/rokoss21/facet-compiler)**
 *   **To dive deep into the language, see:** 👑 **[The FACET Language Specification](https://github.com/rokoss21/FACET)**
 ---
 
 ### 🚀 The FACET Ecosystem
 
-My work is centered around the **FACET ecosystem**, a full-stack solution designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer builds upon the last — from a deterministic language foundation to a global-scale AI orchestration engine.
+My work is centered around the **FACET ecosystem**, a full-stack solution designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer builds upon the last — from a deterministic language foundation through a high-performance Rust compiler to a global-scale AI orchestration engine.
 
 ```sh
 $ facetctl diag --arch --wide
@@ -43,12 +44,12 @@ $ facetctl diag --arch --wide
 [12:07:54] INFO  shared services: policy | artifacts | event-bus
 
 +-----------------------+  +-----------------------+  +-----------------------+
-|     FACET Language    |  |      FSSG Publisher   |  |   RMCP Orchestrator   |
+|     FACET Language    |  |     FACET Compiler    |  |      FSSG Publisher   |
 +-----------------------+  +-----------------------+  +-----------------------+
-| Deterministic grammar |  | Static site generator |  | 3-stage planner       |
-| Pure lenses (|>)      |  | HTML/Markdown render  |  | FastAPI gateway       |
-| Output contracts      |  | PyPI package ready   |  | Prometheus metrics    |
-| Canonical JSON        |  | Direct HTML render   |  | Orchestrates agents   |
+| Deterministic grammar |  | High-performance Rust  |  | Static site generator|
+| Pure lenses (|>)      |  | Type checking & FTS    |  | HTML/Markdown render |
+| Output contracts      |  | Token Box Model        |  | PyPI package ready   |
+| Canonical JSON        |  | Lens pipeline engine   |  | Direct HTML render   |
 +-----------------------+  +-----------------------+  +-----------------------+
 
 +-----------------------+  +-----------------------+  +-----------------------+
@@ -61,10 +62,12 @@ $ facetctl diag --arch --wide
 +-----------------------+  +-----------------------+  +-----------------------+
 
 tips:
-  facetctl lint ./specs/app.facet
-  facetctl run  ./specs/app.facet --input input.json
-  fssg build -c site.config.json
-  facetctl logs --follow
+  fct build --input app.facet                    # Compile FACET to JSON
+  fct run --input app.facet --budget 4096       # Execute with token budget
+  fct test --input app.facet                     # Run integrated tests
+  facetctl lint ./specs/app.facet                # Validate with orchestrator
+  fssg build -c site.config.json                 # Generate static sites
+  facetctl logs --follow                         # Monitor agent activity
 $
 
 ```
@@ -81,6 +84,19 @@ Each layer is a direct application of the core FACET philosophy:
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Language_Design-007ACC?style=for-the-badge" alt="Language Design">
   <img src="https://img.shields.io/badge/Parsing-orange?style=for-the-badge" alt="Parsing">
+</p>
+
+---
+
+### 🦀 **[FACET Compiler](https://github.com/rokoss21/facet-compiler)**
+
+> The **core execution engine**. A high-performance Rust compiler that transforms FACET language specifications into optimized, deterministic AI agent definitions with full type safety and mathematical guarantees.
+
+<p>
+  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust">
+  <img src="https://img.shields.io/badge/Performance-critical-red?style=for-the-badge" alt="Performance-critical">
+  <img src="https://img.shields.io/badge/Type_Safety-blue?style=for-the-badge" alt="Type Safety">
+  <img src="https://img.shields.io/badge/Zero-copy-green?style=for-the-badge" alt="Zero-copy">
 </p>
 
 ---
@@ -143,8 +159,8 @@ Each layer is a direct application of the core FACET philosophy:
 * **Software Architecture:** Clean Architecture, Protocol Design (MCP), Domain-Driven Design (DDD).
 * **Languages & Ecosystems:**
 
+  * **Rust:** Expert-level compiler development, high-performance systems, memory safety, and zero-cost abstractions.
   * **Python:** Expert-level, including performance tuning (Numba, NumPy) and packaging (PyPI).
-  * **Rust:** Proficient, with a focus on high-performance, memory-safe systems programming.
   * **JavaScript/TypeScript:** Proficient, including Node.js and packaging (NPM).
 * **DevOps & Tooling:** CI/CD (GitHub Actions), Docker, Test-Driven Development (TDD), Release Management.
 

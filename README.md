@@ -17,19 +17,32 @@
 
 ### 👋 About Me
 
-I am an AI and Platform Engineer passionate about building developer tools founded on the principles of **determinism, predictability, and engineering rigor**.
+I am an AI & Platform Engineer and the author of **FACET — the Deterministic Contract Layer for AI (since 2025)**.
 
-Frustrated by the chaotic, non-deterministic nature of prompt engineering, I set out to replace this "dark art" with a true engineering discipline. This journey led me to create the **[FACET Ecosystem](https://github.com/rokoss21/FACET-AGENTS)**, a full-stack platform designed to make AI interactions as reliable and scalable as modern cloud infrastructure.
+My work focuses on a single core problem in modern AI systems:  
+**the absence of enforceable contracts.**  
+Most LLM-based systems rely on best-effort prompts, retries, and post-hoc validation — approaches that do not scale and cannot guarantee correctness.
 
-The ultimate validation of this approach came during a test of the system's "meta-agent" — an agent designed to create other agents. When the AI assistant lacked the necessary runtime to execute the task, it didn't fail. Instead, it read the declarative blueprint of the tool it was missing and **synthesized its own interpreter from scratch** to complete the mission.
+FACET was created to address this at the **standard level**, not as another framework or wrapper, but as a **formal contract layer** that treats AI behavior as *compiled software*, not probabilistic improvisation.
 
-This moment proved the core philosophy: when you provide AI with structure, it doesn't just become more reliable; it becomes more creative and capable.
+The FACET standard defines:
+- deterministic tool-calling contracts  
+- canonical, provider-independent intermediate representation  
+- reproducible context allocation and execution semantics  
+- explicit conformance levels and adapter requirements  
 
-**My goal is to build the operating system for the future of AI. If this vision resonates with you, I invite you to explore the ecosystem, starting with the agents themselves.**
+This work is documented as a public specification and reference architecture, designed to outlive any single vendor, model, or SDK.
 
-*   **To see what's possible, start here:** 🚀 **[FACET Agents Ecosystem](https://github.com/rokoss21/FACET-AGENTS)**
-*   **To dive deep into the compiler, see:** 🦀 **[FACET Compiler](https://github.com/rokoss21/facet-compiler)**
-*   **To dive deep into the language, see:** 👑 **[The FACET Language Specification](https://github.com/rokoss21/FACET)**
+The broader FACET ecosystem — compilers, agents, orchestrators — exists to **prove the standard in practice**, not to replace it. Implementations may evolve; the contract remains.
+
+**My goal is to establish deterministic contracts as a baseline expectation for AI systems — in the same way type systems, IRs, and protocols became non-negotiable in traditional software engineering.**
+
+If this direction resonates with you, start with the standard itself:
+
+* 📜 **FACET Standard & Specification:** https://github.com/rokoss21/facet-standard  
+* 🧠 **Design Rationale & History:** https://github.com/rokoss21/facet-standard/blob/main/RATIONALE.md  
+* 🦀 **Reference Compiler (Rust):** https://github.com/rokoss21/facet-compiler  
+
 ---
 
 ### 🚀 The FACET Ecosystem

@@ -45,9 +45,17 @@ If this direction resonates with you, start with the standard itself:
 
 ---
 
-### 🚀 The FACET Ecosystem
+## 🚀 The FACET Ecosystem
 
-My work is centered around the **FACET ecosystem**, a full-stack solution designed to make AI interactions as rigorous, predictable, and scalable as modern cloud infrastructure. Each layer builds upon the last — from a deterministic language foundation through a high-performance Rust compiler to a global-scale AI orchestration engine.
+My work is centered around the **FACET ecosystem** — a vertically integrated, contract-first stack designed to make AI interactions as **rigorous, predictable, and scalable** as modern cloud infrastructure.
+
+Each layer builds upon the previous one, forming a coherent system:
+from a deterministic language and formal specification,
+through a high-performance Rust compiler,
+to distributed orchestration and production-grade execution.
+
+FACET is not a collection of tools.
+It is an **architecture**.
 
 ```sh
 $ facetctl diag --arch --wide
@@ -55,127 +63,238 @@ $ facetctl diag --arch --wide
 [12:07:53] INFO  loading MCP runtime ................ OK
 [12:07:54] INFO  connecting RMCP orchestrator ....... OK
 [12:07:54] INFO  shared services: policy | artifacts | event-bus
+```
 
+### Architectural Overview
+
+```
 +-----------------------+  +-----------------------+  +-----------------------+
 |     FACET Language    |  |     FACET Compiler    |  |      FSSG Publisher   |
 +-----------------------+  +-----------------------+  +-----------------------+
-| Deterministic grammar |  | High-performance Rust  |  | Static site generator|
-| Pure lenses (|>)      |  | Type checking & FTS    |  | HTML/Markdown render |
-| Output contracts      |  | Token Box Model        |  | PyPI package ready   |
-| Canonical JSON        |  | Lens pipeline engine   |  | Direct HTML render   |
+| Deterministic grammar |  | High-performance Rust |  | Deterministic builds  |
+| Pure lenses (|>)      |  | Type checking (FTS)   |  | HTML / Markdown       |
+| Output contracts      |  | Token Box Model       |  | Artifact generation   |
+| Canonical JSON (IR)   |  | Lens pipeline engine  |  | Byte-stable output    |
 +-----------------------+  +-----------------------+  +-----------------------+
 
 +-----------------------+  +-----------------------+  +-----------------------+
 |      Policy Store     |  |   Artifact Registry   |  |     Event Bus / IO    |
 +-----------------------+  +-----------------------+  +-----------------------+
-| RBAC & approvals      |  | Prompts & lenses      |  | Topics & queueing     |
-| Guard rules           |  | Contracts & schemas   |  | Tool events           |
-| Audit logs            |  | Versioning            |  | Tracing spans         |
-| Config mgmt           |  | Reusable modules      |  | Telemetry             |
+| RBAC & approvals     |  | Contracts & schemas    |  | Topics & queues       |
+| Guard rules          |  | Prompts & lenses       |  | Tool events           |
+| Audit logs           |  | Versioned modules      |  | Tracing & telemetry   |
+| Config management    |  | Reproducible inputs    |  | Deterministic IO      |
 +-----------------------+  +-----------------------+  +-----------------------+
-
-tips:
-  fct build --input app.facet                    # Compile FACET to JSON
-  fct run --input app.facet --budget 4096       # Execute with token budget
-  fct test --input app.facet                     # Run integrated tests
-  facetctl lint ./specs/app.facet                # Validate with orchestrator
-  fssg build -c site.config.json                 # Generate static sites
-  facetctl logs --follow                         # Monitor agent activity
-$
-
 ```
 
-Each layer is a direct application of the core FACET philosophy:
+### Operational Capabilities
+
+```sh
+fct build app.facet                     # Compile FACET to Canonical JSON
+fct run app.facet --budget 4096         # Execute with strict token bounds
+fct test app.facet                      # Run deterministic tests (golden)
+facetctl lint ./specs/app.facet         # Validate contracts & constraints
+fssg build -c site.config.json          # Generate deterministic artifacts
+facetctl logs --follow                  # Observe agent execution
+```
+
+### What this architecture enables
+
+* **Deterministic execution** — identical inputs produce identical outputs
+* **Contract-first AI systems** — invalid states are rejected before runtime
+* **Provider independence** — OpenAI, Anthropic, Gemini as interchangeable backends
+* **Reproducibility & auditability** — snapshot testing, stable diffs, stable hashes
+* **Scalability by design** — from single-agent workflows to distributed fleets
+
+Each layer is a direct application of the same core principle:
+
+> **AI systems should be engineered, not improvised.**
 
 ---
 
 ### 👑 **[FACET Language](https://github.com/rokoss21/FACET)**
 
-> The **foundation and source code of the philosophy**. A deterministic markup language for AI instructions, featuring first-class contracts and pure lenses.
+**(Normative Language Definition)**
+
+> The **language-level definition of the FACET standard**.
+> A deterministic markup language for AI instructions, defining contracts, interfaces, and execution semantics.
+
+This repository defines:
+
+* the surface syntax of FACET
+* contract constructs (`@input`, `@output`, `@interface`)
+* deterministic composition primitives (lenses, pipelines)
+
+It is the **authoritative source of the language layer**, not an application framework.
 
 <p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/Language_Design-007ACC?style=for-the-badge" alt="Language Design">
-  <img src="https://img.shields.io/badge/Parsing-orange?style=for-the-badge" alt="Parsing">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/Language_Design-007ACC?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Parsing-orange?style=for-the-badge">
 </p>
 
 ---
 
 ### 🦀 **[FACET Compiler](https://github.com/rokoss21/facet-compiler)**
 
-> The **core execution engine**. A high-performance Rust compiler that transforms FACET language specifications into optimized, deterministic AI agent definitions with full type safety and mathematical guarantees.
+**(Reference Compiler Implementation)**
+
+> The **reference compiler for the FACET standard**.
+> Implements the specification exactly, without extensions or shortcuts.
+
+This compiler:
+
+* parses FACET into a strict AST
+* enforces the Facet Type System (FTS)
+* builds the Reactive DAG (R-DAG)
+* emits Canonical JSON as the intermediate representation
+
+Other implementations are expected to match its observable behavior.
 
 <p>
-  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust">
-  <img src="https://img.shields.io/badge/Performance-critical-red?style=for-the-badge" alt="Performance-critical">
-  <img src="https://img.shields.io/badge/Type_Safety-blue?style=for-the-badge" alt="Type Safety">
-  <img src="https://img.shields.io/badge/Zero-copy-green?style=for-the-badge" alt="Zero-copy">
+  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white">
+  <img src="https://img.shields.io/badge/Reference_Implementation-red?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Type_Safety-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Deterministic_IR-green?style=for-the-badge">
 </p>
 
 ---
 
 ### 🤖 **[FACET Agents Ecosystem](https://github.com/rokoss21/FACET-AGENTS)**
 
-> The **practical application layer**. A comprehensive collection of specialized AI agents demonstrating FACET's power in real-world scenarios, featuring self-evolving orchestration and intelligent task decomposition.
+**(Conformance Demonstrations)**
+
+> A collection of AI agents built **strictly on top of FACET contracts**, used to validate reproducibility, tool-calling correctness, and multi-step determinism.
+
+This repository exists to:
+
+* stress-test the standard
+* surface edge cases
+* provide real-world failure data
+
+It is a **testbed**, not a dependency.
 
 <p>
-  <img src="https://img.shields.io/badge/Agents-15+-blue?style=for-the-badge" alt="15+ Agents">
-  <img src="https://img.shields.io/badge/Self--Evolving-purple?style=for-the-badge" alt="Self-Evolving">
-  <img src="https://img.shields.io/badge/Multi--Agent-green?style=for-the-badge" alt="Multi-Agent">
-  <img src="https://img.shields.io/badge/Orchestrator-v2.1.0-orange?style=for-the-badge" alt="Orchestrator v2.1.0">
+  <img src="https://img.shields.io/badge/Conformance_Tests-15+-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Reproducible-purple?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Multi--Agent-green?style=for-the-badge">
 </p>
 
 ---
 
 ### ⚡ **[FACET MCP Server](https://github.com/rokoss21/FACET_mcp)**
 
-> The **application layer**. A high-performance, "Agent-First" execution engine that makes the power of FACET accessible to AI agents as a reliable tool.
+**(Protocol Adapter & Execution Host)**
+
+> An execution host that exposes FACET contracts to agents via a stable protocol boundary.
+
+Used to validate:
+
+* adapter behavior
+* tool invocation guarantees
+* isolation between contract definition and execution
 
 <p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript">
-  <img src="https://img.shields.io/badge/WebSockets-000000?style=for-the-badge&logo=websocket&logoColor=white" alt="WebSockets">
-  <img src="https://img.shields.io/badge/SIMD-red?style=for-the-badge" alt="SIMD">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+  <img src="https://img.shields.io/badge/Adapter_Testbed-black?style=for-the-badge">
 </p>
 
 ---
 
-### 📄 **[FSSG - FACET Static Site Generator](https://github.com/rokoss21/FACET-FSSG)**
+### 📄 **[FSSG — FACET Static Site Generator](https://github.com/rokoss21/FACET-FSSG)**
 
-> The **publishing layer**. A deterministic static site generator that consumes FACET canonical JSON to production-grade websites, documentation, and artifacts. Ensures byte-for-byte identical builds with complete audit trails.
+**(Canonical JSON Consumer)**
+
+> Demonstrates how **Canonical JSON enables deterministic downstream systems**.
+
+FSSG proves that:
+
+* Canonical JSON is stable enough for publishing pipelines
+* identical inputs produce byte-for-byte identical outputs
+* FACET IR is suitable for caching, diffs, and audits
 
 <p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/PyPI-v1.1.0-blue?style=for-the-badge&logo=pypi&logoColor=white" alt="PyPI v1.1.0">
-  <img src="https://img.shields.io/badge/Deterministic-green?style=for-the-badge" alt="Deterministic">
+  <img src="https://img.shields.io/badge/Canonical_JSON-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Deterministic_Builds-blue?style=for-the-badge">
 </p>
 
 ---
 
 ### 🧠 **[FACET Orchestrator (RMCP)](https://github.com/rokoss21/rmcp-protocol)**
 
-> The **scaling layer**. An AI Operating System & Orchestration Engine that uses the principles of FACET to coordinate entire fleets of AI agents and tools at scale.
+**(Scaling & Coordination Layer)**
+
+> A distributed orchestration engine that applies FACET contracts at scale.
+
+This project explores:
+
+* contract-aware scheduling
+* deterministic coordination across agents
+* protocol-level guarantees
 
 <p>
-  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white" alt="Rust">
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI">
-  <img src="https://img.shields.io/badge/Distributed_Systems-blueviolet?style=for-the-badge" alt="Distributed Systems">
+  <img src="https://img.shields.io/badge/Distributed_Systems-blueviolet?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Protocol_Design-orange?style=for-the-badge">
 </p>
 
 ---
 
-### 🛠️ Core Competencies & Skills
+## 🛠️ Core Competencies & Technical Focus
 
-* **AI & Machine Learning:** AI Orchestration, Multi-Agent Systems, AI Agent Tooling, Prompt Engineering, Structured Data Extraction.
-* **Platform & Backend Engineering:** High-Performance Computing (SIMD), API Design, Asynchronous Services, Distributed Systems, Systems Programming.
-* **Software Architecture:** Clean Architecture, Protocol Design (MCP), Domain-Driven Design (DDD).
-* **Languages & Ecosystems:**
+### AI Systems & Intelligence Engineering
 
-  * **Rust:** Expert-level compiler development, high-performance systems, memory safety, and zero-cost abstractions.
-  * **Python:** Expert-level, including performance tuning (Numba, NumPy) and packaging (PyPI).
-  * **JavaScript/TypeScript:** Proficient, including Node.js and packaging (NPM).
-* **DevOps & Tooling:** CI/CD (GitHub Actions), Docker, Test-Driven Development (TDD), Release Management.
+* Deterministic AI system design
+* AI orchestration & multi-agent coordination
+* Contract-based tool calling & structured generation
+* Agent execution models and reproducibility guarantees
+* Failure-mode analysis of LLM systems across providers
+
+### Platform & Backend Engineering
+
+* High-performance systems (SIMD-aware design)
+* Asynchronous and event-driven architectures
+* Distributed systems & coordination protocols
+* API and protocol design for long-lived systems
+* Runtime isolation and execution boundaries
+
+### Software Architecture & Standards
+
+* Contract-first architecture
+* Language and protocol design
+* Deterministic execution models
+* Domain-driven design (DDD)
+* Specification writing (RFC-style, normative language)
+
+### Languages & Ecosystems
+
+* **Rust** — Expert
+
+  * Compiler construction
+  * Deterministic execution engines
+  * Memory-safe high-performance systems
+  * Zero-cost abstractions
+
+* **Python** — Expert
+
+  * AI tooling and orchestration
+  * Performance tuning (NumPy, Numba)
+  * Packaging and distribution (PyPI)
+  * Async systems and agent runtimes
+
+* **JavaScript / TypeScript** — Proficient
+
+  * Node.js services
+  * SDK and adapter development
+  * Tooling and integration layers
+
+### DevOps, Tooling & Quality
+
+* CI/CD pipelines (GitHub Actions)
+* Deterministic build systems
+* Test-driven development (TDD)
+* Snapshot / golden testing methodologies
+* Release engineering & versioning discipline
 
 ---
 

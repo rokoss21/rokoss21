@@ -220,7 +220,8 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 
 ## ⚙️ IOSM CLI — The Runtime
 
-> Not just another CLI agent. A full **AI engineering runtime** that implements the IOSM methodology as a terminal-native execution environment.
+> Most AI CLIs are optimized for conversation.<br>
+> **IOSM CLI is optimized for controlled engineering execution** — working directly against your filesystem and shell, orchestrating agents, tracking metrics, and running improvement cycles that can be audited, repeated, and benchmarked.
 
 <div align="center">
 
@@ -230,7 +231,7 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 
 <br><br>
 
-<img src="https://img.shields.io/npm/v/iosm-cli?style=for-the-badge&color=cb3837&label=npm"> &nbsp; <img src="https://img.shields.io/github/stars/rokoss21/iosm-cli?style=for-the-badge&color=e3b341&label=%E2%98%85">
+<img src="https://img.shields.io/npm/v/iosm-cli?style=for-the-badge&color=cb3837&label=npm"> &nbsp; <img src="https://img.shields.io/github/stars/rokoss21/iosm-cli?style=for-the-badge&color=e3b341&label=%E2%98%85"> &nbsp; <img src="https://img.shields.io/badge/models-507-58a6ff?style=for-the-badge"> &nbsp; <img src="https://img.shields.io/badge/providers-15+-8b949e?style=for-the-badge">
 
 </div>
 
@@ -240,31 +241,60 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 <tr>
 <td width="50%" valign="top">
 
-**What it is:**
-- Terminal TUI with interactive session management
-- 15+ LLM providers (OpenAI, Anthropic, Gemini, Groq, Ollama, OpenRouter…)
-- MCP server integration (1/1 connected, extensible)
-- Built-in skills: `astro-report`, `claude-md-master`, `mcp-builder`, `skill-creator`
-- Checkpoint system for session recovery
+#### What you get
+
+| Area | Capability |
+|:--|:--|
+| **Daily coding** | Interactive TUI with file, search, edit, and shell tools |
+| **Safety** | `/checkpoint`, `/rollback`, `/doctor`, granular permissions |
+| **Complex changes** | `/contract` → `/singular` → `/swarm` — deterministic execution |
+| **Understanding** | Semantic search, repo-scale indexing, project memory |
+| **Multi-agent** | Parallel subagents with shared memory and locks |
+| **Background** | Detached shell runs with `/bg` process management |
+| **Methodology** | IOSM cycles with metrics, evidence, and artifact history |
 
 </td>
 <td width="50%" valign="top">
 
-**What makes it different:**
-- Not a chat wrapper — an **IOSM runtime**: it enforces improvement cycles, gates, and metrics
-- Contract-aware: understands FACET documents natively
-- Multi-mode execution: `standard`, `singular`, `semantic`, `contract`
-- Project memory and context management
-- RPC bridge for programmatic access
+#### Why it's not another chat wrapper
+
+**It's a runtime.** It doesn't just talk to models — it orchestrates engineering work with contracts, gates, and checkpoints.
+
+- **Contract-aware** — understands FACET documents natively
+- **Orchestration engine** — `/singular` produces 3 plans with trade-offs, `/swarm` executes with locks and quality gates
+- **IOSM cycles** — `iosm cycle plan` → `iosm cycle status` → `iosm cycle report` — formal improvement with metrics
+- **7 integration modes** — Interactive TUI, print mode, JSON stream, JSON-RPC, Telegram bridge, CI pipeline, TypeScript SDK
+- **Extensible platform** — MCP servers, TypeScript extensions, Markdown skills, prompt templates, JSON themes
+- **66 extension examples** + **12 SDK examples** included
 
 </td>
 </tr>
 </table>
 
+**The workflow for complex changes:**
+
+```
+/contract                    ← Define scope: what's in, what's protected, expected behavior
+/singular "Refactor auth"    ← Produces 3 implementation options with trade-off analysis
+/swarm run                   ← Executes with: Scopes → Locks → Gates → Checkpoints → Done
+/iosm 0.95                   ← Measure: run IOSM cycle targeting Index ≥ 0.95
+```
+
 ```sh
+# Install
 npm install -g iosm-cli
-cd your-project && iosm init
-iosm                           # launches TUI — 507 models ready
+
+# One-shot (no TUI)
+iosm -p "Audit src/ for unused exports"
+
+# Interactive
+cd your-project && iosm         # 507 models ready across 15+ providers
+
+# With file context
+iosm @README.md @src/main.ts -p "Explain the entry points"
+
+# Telegram remote control
+iosm --mode telegram --profile full
 ```
 
 ---

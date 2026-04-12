@@ -237,44 +237,20 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 
 <br>
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-#### Slash Commands
-
 | Command | What it does |
 |:--|:--|
-| `/contract` | Interactive engineering contract editor — scope, constraints, quality gates, DoD |
-| `/singular` | Feature feasibility: baseline scan → agent analysis → 3 implementation options |
-| `/swarm` | Multi-agent orchestration: `run`, `from-singular`, `watch`, `retry`, `resume` |
-| `/ultrathink` | Deep multi-iteration read-only analysis with self-check checkpoints (up to 12 passes) |
-| `/orchestrate` | Manual multi-agent delegation with parallel execution and profile assignment |
-| `/iosm` | Run full IOSM improvement cycle targeting a specific Index score |
-| `/checkpoint` | Save a named rollback point. `/rollback` restores it |
-| `/semantic` | Semantic search manager — setup, auto-index, query across entire codebase |
-| `/memory` | Persistent project notes that survive session boundaries |
-
-</td>
-<td width="50%" valign="top">
-
-#### Runtime Capabilities
-
-| Command | What it does |
-|:--|:--|
-| `/model` | Provider-first model selector — 507 models across 15+ providers |
-| `/bg` | Background process manager — `list`, `logs`, `stop`, `stop-all`, `prune` |
-| `/doctor` | Full diagnostics: model, auth, MCP, hooks, toolchain health |
-| `/yolo` | Toggle auto-approve mode for tool execution |
-| `/login` | OAuth + API key authentication (full models.dev catalog) |
-| `/mcp` | MCP server manager — add, configure, connect external tools |
-| `/extensions` | Extension lifecycle: `install`, `update`, `remove`, `enable`, `disable` |
-| `/export` | Export session to HTML. `/share` uploads to GitHub Gist |
-| `/resume` | Session picker. `/fork` branches. `/tree` navigates session graph |
-
-</td>
-</tr>
-</table>
+| `/contract` | Interactive engineering contract editor — scope, constraints, quality gates, Definition of Done |
+| `/singular` | Feature feasibility analyzer: baseline scan → agent analysis → 3 implementation options with trade-offs |
+| `/swarm` | Multi-agent orchestration runtime: `run`, `from-singular`, `watch`, `retry`, `resume` — with file locks and quality gates |
+| `/ultrathink` | Deep multi-iteration read-only analysis with self-check checkpoints — up to 12 passes of focused reasoning |
+| `/orchestrate` | Manual multi-agent delegation with parallel execution, profile assignment, and shared memory |
+| `/iosm` | Run a full IOSM improvement cycle targeting a specific Index score — `plan` → `status` → `report` |
+| `/checkpoint` | Save named rollback points. `/rollback` restores instantly. Filesystem-level undo across any operation |
+| `/semantic` | Semantic search manager — setup, auto-index, query across entire codebase with embeddings |
+| `/model` | Provider-first model selector — 507 models across 15+ providers, switchable mid-session |
+| `/memory` | Persistent project notes that survive session boundaries — context that never disappears |
+| `/mcp` | MCP server manager — add, configure, connect external tools as first-class capabilities |
+| `/bg` | Background process manager — run dev servers, watchers, long tasks with `list`, `logs`, `stop` |
 
 <table>
 <tr>

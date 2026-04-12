@@ -81,30 +81,70 @@ Two ecosystems. One thesis: **AI systems should be engineered, not improvised.**
 
 ## The Standard
 
-FACET is not another framework or wrapper. It is a **formal contract layer** — a specification that treats AI behavior as compiled software, not probabilistic improvisation. Designed to outlive any single vendor, model, or SDK.
+FACET is not another framework or wrapper. It is a **formal contract layer** — a specification that treats AI behavior as compiled software, not probabilistic improvisation.
 
-The broader ecosystem — compilers, agents, orchestrators — exists to **prove the standard in practice**, not to replace it.
+The standard defines a **Neural Architecture Description Language (NADL)** with typed inputs, constrained outputs, deterministic variable evaluation (R-DAG), explicit token budget allocation (Token Box Model), and fail-closed runtime guards. Every contract compiles to **Canonical JSON** — a stable, diffable, cacheable intermediate representation that is identical regardless of which model, provider, or runtime executes it.
+
+The broader ecosystem — compilers, agents, orchestrators — exists to **prove the standard in practice**, not to replace it. Designed to outlive any single vendor, model, or SDK.
 
 > **Implementations may evolve. The contract remains.**
 
-**IOSM** — *Improve → Optimize → Shrink → Modularize* — is the companion methodology: a reproducible engineering process with strict phases, quality gates, and six canonical metrics.
+```facet
+@system
+  role: "payment-processor"
 
-Together: **FACET constrains execution. IOSM constrains evolution.**
+@input  amount:    float(min=0.01)
+@input  currency:  enum["USD","EUR","GBP"]
+
+@output status:    enum["success","failed"]
+@output tx_id:     string(min_length=8)
+
+@policy
+  max_tokens: 512
+  on_invalid_output: reject
+```
+
+↓ &nbsp; `facet-fct build payment.facet` &nbsp; ↓
+
+```json
+{
+  "meta": { "version": "2.1.3", "hash": "a7f3c9..." },
+  "inputs":  { "amount": { "type": "float", "min": 0.01 }, "currency": { "type": "enum", "values": ["USD","EUR","GBP"] } },
+  "outputs": { "status": { "type": "enum", "values": ["success","failed"] }, "tx_id": { "type": "string", "min_length": 8 } },
+  "policy":  { "max_tokens": 512, "on_invalid_output": "reject" }
+}
+```
+
+<sub>Invalid output never reaches your service. The contract is enforced before generation, not after. Same inputs → same canonical JSON → same guarantees. Always.</sub>
 
 <br>
 
-<div align="center">
+<table>
+<tr>
+<td width="50%" valign="top">
 
-```facet
-@input  amount:   float(min=0.01)
-@input  currency: enum["USD","EUR","GBP"]
-@output status:   enum["success","failed"]
-@output tx_id:    string(min_length=8)
-```
+#### FACET constrains execution
 
-<sub>Invalid output never reaches the payment system. The contract is enforced before generation, not after.</sub>
+- **Typed contracts** — inputs and outputs are schema-enforced at compile time
+- **Canonical JSON IR** — deterministic, stable-hashed, provider-independent
+- **R-DAG evaluation** — variable dependencies resolved in guaranteed topological order
+- **Token Box Model** — explicit budget allocation with compression/drop rules
+- **Fail-closed guards** — invalid output is rejected, not logged and forwarded
 
-</div>
+</td>
+<td width="50%" valign="top">
+
+#### IOSM constrains evolution
+
+- **4 strict phases** — Improve → Optimize → Shrink → Modularize
+- **Quality gates** — each phase must pass before the next begins
+- **6 canonical metrics** — complexity, simplicity, modularity, coverage, debt, performance
+- **IOSM-Index** — single aggregate score that tracks system health over time
+- **Reproducible cycles** — every improvement is baselined, hypothesized, measured, and reported
+
+</td>
+</tr>
+</table>
 
 ---
 

@@ -107,7 +107,7 @@ Together: **FACET constrains execution. IOSM constrains evolution.**
 **[FACET Standard](https://github.com/rokoss21/facet-standard)**<br>
 <sub><b>Normative Specification</b></sub>
 
-<img src="https://img.shields.io/github/stars/rokoss21/facet-standard?style=flat-square&color=e3b341&label=★">
+<img src="https://img.shields.io/github/stars/rokoss21/facet-standard?style=flat-square&color=e3b341&label=%E2%98%85">
 
 <sub>v2.1.3 · REC-PROD<br>NADL · FTS · R-DAG · Token Box<br>Policy · Guards · Conformance</sub>
 
@@ -122,7 +122,7 @@ Together: **FACET constrains execution. IOSM constrains evolution.**
 **[facet-compiler](https://github.com/rokoss21/facet-compiler)**<br>
 <sub><b>Reference Implementation</b></sub>
 
-<img src="https://img.shields.io/github/stars/rokoss21/facet-compiler?style=flat-square&color=e3b341&label=★">
+<img src="https://img.shields.io/github/stars/rokoss21/facet-compiler?style=flat-square&color=e3b341&label=%E2%98%85">
 
 <sub>Rust · fct 0.1.2 · 6 crates<br>AST → FTS → R-DAG → Canonical JSON<br>Other impls must match its behavior</sub>
 
@@ -137,7 +137,7 @@ Together: **FACET constrains execution. IOSM constrains evolution.**
 **[IOSM Specification](https://github.com/rokoss21/IOSM)**<br>
 <sub><b>Engineering Methodology</b></sub>
 
-<img src="https://img.shields.io/github/stars/rokoss21/IOSM?style=flat-square&color=e3b341&label=★">
+<img src="https://img.shields.io/github/stars/rokoss21/IOSM?style=flat-square&color=e3b341&label=%E2%98%85">
 
 <sub>v1.0 · JSON schemas · Validator<br>4 phases · 6 metrics · Quality gates<br>Reproducible improvement cycles</sub>
 
@@ -175,7 +175,7 @@ Together: **FACET constrains execution. IOSM constrains evolution.**
 
 <br><br>
 
-<img src="https://img.shields.io/npm/v/iosm-cli?style=for-the-badge&color=cb3837&label=npm"> &nbsp; <img src="https://img.shields.io/github/stars/rokoss21/iosm-cli?style=for-the-badge&color=e3b341&label=★">
+<img src="https://img.shields.io/npm/v/iosm-cli?style=for-the-badge&color=cb3837&label=npm"> &nbsp; <img src="https://img.shields.io/github/stars/rokoss21/iosm-cli?style=for-the-badge&color=e3b341&label=%E2%98%85">
 
 </div>
 
@@ -283,7 +283,7 @@ If FACET-AGENTS can't reproduce behavior across providers — the standard has a
 **[swarm-iosm](https://github.com/rokoss21/swarm-iosm)**<br>
 <sub><b>Parallel Orchestration</b></sub>
 
-<img src="https://img.shields.io/github/stars/rokoss21/swarm-iosm?style=flat-square&color=e3b341&label=★">
+<img src="https://img.shields.io/github/stars/rokoss21/swarm-iosm?style=flat-square&color=e3b341&label=%E2%98%85">
 
 <sub>Python · v2.1 · Claude Code<br>Locks · Gates · Auto-spawn<br><i>Scaling layer</i></sub>
 
@@ -328,7 +328,7 @@ If FACET-AGENTS can't reproduce behavior across providers — the standard has a
 **[FACET-FSSG](https://github.com/rokoss21/FACET-FSSG)**<br>
 <sub><b>Canonical JSON Consumer</b></sub>
 
-<img src="https://img.shields.io/github/stars/rokoss21/FACET-FSSG?style=flat-square&color=e3b341&label=★">
+<img src="https://img.shields.io/github/stars/rokoss21/FACET-FSSG?style=flat-square&color=e3b341&label=%E2%98%85">
 
 <sub>Static Site Generator<br>Canonical JSON → byte-stable HTML<br><i>Proves the IR works</i></sub>
 

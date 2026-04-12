@@ -241,65 +241,89 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 <tr>
 <td width="50%" valign="top">
 
-#### What you get
+#### Slash Commands
 
-| Area | Capability |
+| Command | What it does |
 |:--|:--|
-| **Daily coding** | Interactive TUI with file, search, edit, and shell tools |
-| **Safety** | `/checkpoint`, `/rollback`, `/doctor`, granular permissions |
-| **Complex changes** | `/contract` → `/singular` → `/swarm` — deterministic execution |
-| **Understanding** | Semantic search, repo-scale indexing, project memory |
-| **Multi-agent** | Parallel subagents with shared memory and locks |
-| **Background** | Detached shell runs with `/bg` process management |
-| **Methodology** | IOSM cycles with metrics, evidence, and artifact history |
-| **Profiles** | `full`, `plan`, `meta`, `iosm` + specialist subagent profiles |
-| **Integrations** | TUI, print, JSON stream, JSON-RPC, Telegram, CI, SDK |
-| **Sessions** | `/resume`, `/fork`, `/tree` — persistent session graph |
-| **Extensions** | MCP servers, TS extensions, Markdown skills, themes |
-| **Sandbox** | Opt-in Linux `bwrap` sandbox, trust ledger, allowlists |
+| `/contract` | Interactive engineering contract editor — scope, constraints, quality gates, DoD |
+| `/singular` | Feature feasibility: baseline scan → agent analysis → 3 implementation options |
+| `/swarm` | Multi-agent orchestration: `run`, `from-singular`, `watch`, `retry`, `resume` |
+| `/ultrathink` | Deep multi-iteration read-only analysis with self-check checkpoints (up to 12 passes) |
+| `/orchestrate` | Manual multi-agent delegation with parallel execution and profile assignment |
+| `/iosm` | Run full IOSM improvement cycle targeting a specific Index score |
+| `/checkpoint` | Save a named rollback point. `/rollback` restores it |
+| `/semantic` | Semantic search manager — setup, auto-index, query across entire codebase |
+| `/memory` | Persistent project notes that survive session boundaries |
 
 </td>
 <td width="50%" valign="top">
 
-#### Why it's not another chat wrapper
+#### Runtime Capabilities
 
-**It's a runtime.** It doesn't just talk to models — it orchestrates engineering work with contracts, gates, and checkpoints.
-
-- **Contract-aware** — understands FACET documents natively
-- **Orchestration engine** — `/singular` produces 3 implementation plans with trade-off analysis; `/swarm` executes with file locks and quality gates
-- **IOSM cycles** — `plan` → `status` → `report` — formal, reproducible improvement with 6 canonical metrics
-- **7 integration modes** — use from terminal, scripts, CI pipelines, editors via RPC, or remotely via Telegram
-- **Extensible platform** — 66 extension examples + 12 SDK examples ship with the package
-- **Policy Engine v2** — deterministic layered permission resolution, per-tool trust decisions, session-scoped approvals
+| Command | What it does |
+|:--|:--|
+| `/model` | Provider-first model selector — 507 models across 15+ providers |
+| `/bg` | Background process manager — `list`, `logs`, `stop`, `stop-all`, `prune` |
+| `/doctor` | Full diagnostics: model, auth, MCP, hooks, toolchain health |
+| `/yolo` | Toggle auto-approve mode for tool execution |
+| `/login` | OAuth + API key authentication (full models.dev catalog) |
+| `/mcp` | MCP server manager — add, configure, connect external tools |
+| `/extensions` | Extension lifecycle: `install`, `update`, `remove`, `enable`, `disable` |
+| `/export` | Export session to HTML. `/share` uploads to GitHub Gist |
+| `/resume` | Session picker. `/fork` branches. `/tree` navigates session graph |
 
 </td>
 </tr>
 </table>
 
-**The workflow for complex changes:**
+<table>
+<tr>
+<td width="25%" align="center">
+
+**4 Profiles**<br>
+<sub><code>full</code> · <code>plan</code> · <code>meta</code> · <code>iosm</code><br>+ specialist subagent profiles</sub>
+
+</td>
+<td width="25%" align="center">
+
+**7 Integration Modes**<br>
+<sub>TUI · Print · JSON stream<br>JSON-RPC · Telegram · CI · SDK</sub>
+
+</td>
+<td width="25%" align="center">
+
+**66 Extension Examples**<br>
+<sub>Tools · Hooks · UI · Commands<br>+ 12 SDK examples</sub>
+
+</td>
+<td width="25%" align="center">
+
+**Policy Engine v2**<br>
+<sub>Layered permissions · Trust ledger<br>Per-tool decisions · Sandbox</sub>
+
+</td>
+</tr>
+</table>
+
+**Controlled execution workflow:**
 
 ```
-/contract                    ← Define scope: what's in, what's protected, expected behavior
-/singular "Refactor auth"    ← Produces 3 implementation options with trade-off analysis
-/swarm run                   ← Executes with: Scopes → Locks → Gates → Checkpoints → Done
-/iosm 0.95                   ← Measure: run IOSM cycle targeting Index ≥ 0.95
+/contract                       ← Define scope, constraints, quality gates, DoD
+/singular "Refactor auth"       ← Baseline scan → 3 implementation options with trade-offs
+                                   → Select option → "Start with Swarm" or manual
+/swarm run --max-parallel 3     ← Scopes → Locks → Gates → Checkpoints → Done
+/swarm watch                    ← Live status: tasks, budget, ETA, critical path, locks
+/iosm 0.95 --max-iterations 5  ← Run IOSM cycle targeting Index ≥ 0.95
 ```
 
 ```sh
-# Install
-npm install -g iosm-cli
+npm install -g iosm-cli         # or: npx iosm-cli
 
-# One-shot (no TUI)
-iosm -p "Audit src/ for unused exports"
-
-# Interactive
-cd your-project && iosm         # 507 models ready across 15+ providers
-
-# With file context
-iosm @README.md @src/main.ts -p "Explain the entry points"
-
-# Telegram remote control
-iosm --mode telegram --profile full
+iosm                            # interactive TUI — 507 models ready
+iosm -p "Audit src/"            # one-shot, no TUI
+iosm --profile plan             # read-only code review
+iosm --mode telegram            # remote control via Telegram
+iosm @src/main.ts -p "Explain"  # pre-load files as context
 ```
 
 ---

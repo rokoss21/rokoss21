@@ -14,9 +14,19 @@
 
 ---
 
-I build **the contract layer for AI execution** — compilers, specifications, and runtimes that make AI behavior deterministic, typed, and reproducible.
+I build **the contract layer for AI execution**.
 
-Think of it as **what TypeScript did for JavaScript, but applied to AI execution**. Before: prompts as strings, retries, hope. After: compile-time contracts, canonical output, explicit failure codes.
+Most AI systems today have no contracts. A prompt goes in, something comes out, and the entire downstream pipeline hopes the shape is right. When it isn't — and it will be — the system retries, falls back, or silently degrades. There is no compile step. No type check. No guarantee. Just strings, probability, and prayer.
+
+I think this is the central unsolved problem of production AI: **not intelligence, but reliability**. We have models that can reason, generate, and plan — but we have almost no infrastructure to ensure they do it the same way twice, in the same format, within the same resource bounds, with the same failure semantics.
+
+This is the gap I work in.
+
+**FACET** is a formal specification and compiler toolchain that treats AI behavior as compiled software. You define contracts — typed inputs, constrained outputs, explicit failure modes — and the compiler enforces them before the model ever runs. If the output doesn't match the contract, it's rejected. Not logged. Not retried. Rejected. The guarantee is structural, not statistical.
+
+**IOSM** is the engineering methodology that sits alongside it: a reproducible improvement cycle with strict phases, quality gates, and canonical metrics. It answers a different question — not "does the system work?" but "is the system getting better, and can I prove it?"
+
+Think of it as **what TypeScript did for JavaScript, but applied to AI execution**. TypeScript didn't make JavaScript smarter — it made JavaScript *accountable*. FACET does the same for LLMs.
 
 Two ecosystems. One thesis: **AI systems should be engineered, not improvised.**
 

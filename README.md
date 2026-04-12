@@ -282,56 +282,73 @@ iosm @src/main.ts -p "Explain"  # pre-load files as context
 
 ## 🏗 The Stack
 
-> FACET is not a collection of tools. It is an **architecture**.<br>
-> Each project has a specific architectural responsibility. Each project exists to fulfill it and nothing else.
-
-```
-   SPECIFICATION                 COMPILERS                    RUNTIME
-  ┌──────────────┐          ┌──────────────────┐        ┌──────────────────┐
-  │ facet-        │          │ facet-compiler   │        │ iosm-cli         │
-  │ standard     │  ──────▶ │ (Rust, fct)      │ ─────▶ │ (TypeScript)     │
-  │              │          │                  │        │                  │
-  │ IOSM spec    │          │ FACET Language   │        │ swarm-iosm       │
-  │              │          │ (Python parser)  │        │ (Python)         │
-  │ soul.md      │          │                  │        │                  │
-  └──────────────┘          │ FACET MCP Server │        │ rmcp-protocol    │
-    Defines the rules       │ (SIMD adapter)   │        │ (FastAPI)        │
-                            └──────────────────┘        └──────────────────┘
-                              Implements them             Executes & scales
-
-                                        │
-                                        ▼
-
-                              PROOF & CONSUMERS
-                            ┌──────────────────┐
-                            │ FACET-AGENTS     │  ← conformance testbed
-                            │ FACET-FSSG       │  ← canonical JSON consumer
-                            │ astrovisor-mcp   │  ← real-world MCP adapter
-                            └──────────────────┘
-                              Validates the contracts
-```
+> FACET is not a collection of disconnected tools. It is a **vertically integrated architecture**.<br>
+> Each project occupies a strict architectural boundary and exists to fulfill a single responsibility.
 
 <table>
 <tr>
-<td width="50%" valign="top">
+<td width="25%" valign="top">
 
-**The architecture is self-correcting.**
+#### 1. Specification
+<sub>**Defines the boundaries**</sub>
+<hr>
 
-If FACET-AGENTS can't reproduce behavior across providers — the standard has a gap. If FSSG can't produce byte-identical output from canonical JSON — the IR spec is wrong. If swarm-iosm needs to override quality gates — the methodology is incomplete.
+The formal rules, language primitives, and methodologies. Provider-agnostic.
+
+• **`facet-standard`**<br>
+• **`IOSM`**<br>
+• **`soul.md`**<br>
+• **`rift-spec`**
 
 </td>
-<td width="50%" valign="top">
+<td width="25%" valign="top">
 
-**What each layer proves:**
+#### 2. Compilers
+<sub>**Enforces the rules**</sub>
+<hr>
 
-- **Specification** → the rules are expressible and complete
-- **Compilers** → the rules are implementable and enforceable
-- **Runtime** → the rules hold under real execution pressure
-- **Proof** → the rules survive contact with production
+The toolchains that parse contracts, resolve DAGs, and emit Canonical JSON.
+
+• **`facet-compiler`** `Rust`<br>
+• **`FACET Language`** `Python`<br>
+• **`FACET MCP Server`** `SIMD`
+
+</td>
+<td width="25%" valign="top">
+
+#### 3. Runtimes
+<sub>**Executes & scales**</sub>
+<hr>
+
+The execution engines that orchestrate agents and enforce output structure.
+
+• **`iosm-cli`** `Terminal`<br>
+• **`swarm-iosm`** `Parallel`<br>
+• **`rmcp-protocol`** `Remote`
+
+</td>
+<td width="25%" valign="top">
+
+#### 4. Proofs
+<sub>**Validates the standard**</sub>
+<hr>
+
+Constrained consumers that guarantee the contract layer holds under pressure.
+
+• **`FACET-AGENTS`** `Testbed`<br>
+• **`FACET-FSSG`** `Byte-stable`<br>
+• **`astrovisor-mcp`** `App`<br>
+• **`enigmo`** `Cryptography`
 
 </td>
 </tr>
 </table>
+
+**A Self-Correcting Ecosystem**
+
+The layers police each other. If `FACET-AGENTS` acts non-deterministically, the *Specification* has a structural gap. If `FACET-FSSG` cannot generate a stable static site from a contract, the *Compiler's* intermediate representation is flawed. If `swarm-iosm` must bypass a quality gate to finish a task, the *Methodology* is incomplete. 
+
+Every repository is an assertion that the standard works.
 
 ---
 

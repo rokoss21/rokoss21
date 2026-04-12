@@ -36,37 +36,42 @@ Two ecosystems. One thesis: **AI systems should be engineered, not improvised.**
 
 <table>
 <tr>
-<td width="33%" valign="top">
+<td width="50%" valign="top">
 
-#### 💳 Payments
+#### 💳 &nbsp; Payment Integration
 
-**Without FACET:**<br>
-LLM returns `{status: "ok"}` instead of `{status: "success"}`. Downstream breaks. Retry. Pray.
+**The problem:** LLM returns `{status: "ok"}` instead of `{status: "success"}`. Your payment service receives invalid data. Transaction state is unknown. Retry? Refund? Hope?
 
-**With FACET:**<br>
-`@output` enforces `enum: ["success","failed"]` at compile time. Invalid shape → run fails before reaching your payment service.
+**With FACET:** `@output status: enum["success","failed"]` — enforced at compile time. If the output doesn't match the schema, the run is rejected before it reaches your service. Not retried. Rejected.
 
 </td>
-<td width="34%" valign="top">
+<td width="50%" valign="top">
 
-#### 🔄 Multi-Step Workflows
+#### 🔄 &nbsp; Codebase Refactoring
 
-**Without IOSM:**<br>
-Refactor "feels done". No metrics. No evidence. No way to compare before/after.
+**The problem:** refactor "feels done". No baseline. No metrics. No evidence it actually got better. Ship and hope.
 
-**With IOSM:**<br>
-Baseline → hypothesis → 4 gated phases → cycle report. Simplicity 0.51 → 0.65. Tracked, reproducible, auditable.
+**With IOSM:** baseline snapshot → hypothesis → 4 gated phases → cycle report. Simplicity went from 0.51 → 0.65. Modularity 0.47 → 0.56. Not opinions — measurements.
 
 </td>
-<td width="33%" valign="top">
+</tr>
+<tr>
+<td width="50%" valign="top">
 
-#### 🤖 Agent Orchestration
+#### 🤖 &nbsp; Multi-Agent Systems
 
-**Without contracts:**<br>
-8 parallel agents. 3 write to the same file. Output drift between runs.
+**The problem:** 8 agents run in parallel. 3 write to the same file. Outputs drift between runs. No rollback. No coordination. Chaos.
 
-**With Swarm + IOSM:**<br>
-File locks prevent conflicts. Quality gates enforce standards. Deterministic dispatch — not chaos.
+**With Swarm-IOSM:** file-level locks prevent conflicts. Quality gates reject substandard work. Auto-spawn fills capability gaps. Every agent operates within a contract — deterministic dispatch, not improvisation.
+
+</td>
+<td width="50%" valign="top">
+
+#### ⚙️ &nbsp; AI-Assisted Development
+
+**The problem:** you switch between 5 different AI tools. Each has its own context, its own memory, its own interface. Nothing connects. You are the integration layer.
+
+**With IOSM-CLI:** one terminal, 507 models across 15+ providers, MCP tool integration, project memory, session checkpoints, built-in skills. A single runtime that understands your codebase — not a chat window with autocomplete.
 
 </td>
 </tr>

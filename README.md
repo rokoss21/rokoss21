@@ -252,6 +252,11 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 | **Multi-agent** | Parallel subagents with shared memory and locks |
 | **Background** | Detached shell runs with `/bg` process management |
 | **Methodology** | IOSM cycles with metrics, evidence, and artifact history |
+| **Profiles** | `full`, `plan`, `meta`, `iosm` + specialist subagent profiles |
+| **Integrations** | TUI, print, JSON stream, JSON-RPC, Telegram, CI, SDK |
+| **Sessions** | `/resume`, `/fork`, `/tree` — persistent session graph |
+| **Extensions** | MCP servers, TS extensions, Markdown skills, themes |
+| **Sandbox** | Opt-in Linux `bwrap` sandbox, trust ledger, allowlists |
 
 </td>
 <td width="50%" valign="top">
@@ -261,11 +266,11 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 **It's a runtime.** It doesn't just talk to models — it orchestrates engineering work with contracts, gates, and checkpoints.
 
 - **Contract-aware** — understands FACET documents natively
-- **Orchestration engine** — `/singular` produces 3 plans with trade-offs, `/swarm` executes with locks and quality gates
-- **IOSM cycles** — `iosm cycle plan` → `iosm cycle status` → `iosm cycle report` — formal improvement with metrics
-- **7 integration modes** — Interactive TUI, print mode, JSON stream, JSON-RPC, Telegram bridge, CI pipeline, TypeScript SDK
-- **Extensible platform** — MCP servers, TypeScript extensions, Markdown skills, prompt templates, JSON themes
-- **66 extension examples** + **12 SDK examples** included
+- **Orchestration engine** — `/singular` produces 3 implementation plans with trade-off analysis; `/swarm` executes with file locks and quality gates
+- **IOSM cycles** — `plan` → `status` → `report` — formal, reproducible improvement with 6 canonical metrics
+- **7 integration modes** — use from terminal, scripts, CI pipelines, editors via RPC, or remotely via Telegram
+- **Extensible platform** — 66 extension examples + 12 SDK examples ship with the package
+- **Policy Engine v2** — deterministic layered permission resolution, per-tool trust decisions, session-scoped approvals
 
 </td>
 </tr>

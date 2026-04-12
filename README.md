@@ -1,305 +1,406 @@
-<table width="100%" border="0" style="border: none; border-collapse: collapse;">
-  <tr>
-    <td align="center" valign="middle" style="padding: 10px;">
-      <a href="https://github.com/rokoss21/FACET">
-        <img src="https://github.com/rokoss21/FACET/blob/main/assets/banner.png?raw=true" alt="FACET Logo" height="200">
-      </a>
-    </td>
-    <td align="center" valign="middle" style="padding: 10px;">
-      <a href="https://github.com/rokoss21/rmcp-protocol">
-        <img src="https://github.com/rokoss21/rmcp-protocol/blob/main/assets/logo.png?raw=true" alt="RMCP+FACET: Operating System for AI Ecosystems" height="200">
-      </a>
-    </td>
-  </tr>
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1a1b27&height=200&section=header&text=Emil%20Rokossovskiy&fontSize=42&fontColor=e6edf3&fontAlignY=34&desc=AI%20Systems%20Architect%20%E2%80%A2%20Language%20Designer%20%E2%80%A2%20Compiler%20Engineer&descSize=16&descAlignY=54&descColor=8b949e&animation=fadeIn" width="100%" />
+
+<br>
+
+```
+"You can't build reliable systems on top of nondeterministic contracts."
+```
+
+<a href="https://rokoss21.tech">Website</a> · <a href="https://linkedin.com/in/rokoss">LinkedIn</a> · <a href="https://dev.to/rokoss21">DEV.to</a> · <a href="mailto:ecsiar@gmail.com">Email</a>
+
+</div>
+
+---
+
+I build **the contract layer for AI execution** — compilers, specifications, and runtimes that make AI behavior deterministic, typed, and reproducible.
+
+Think of it as **what TypeScript did for JavaScript, but applied to AI execution**. Before: prompts as strings, retries, hope. After: compile-time contracts, canonical output, explicit failure codes.
+
+Two ecosystems. One thesis: **AI systems should be engineered, not improvised.**
+
+---
+
+## Why This Matters in Practice
+
+<table>
+<tr>
+<td width="33%" valign="top">
+
+#### 💳 Payments
+
+**Without FACET:**<br>
+LLM returns `{status: "ok"}` instead of `{status: "success"}`. Downstream breaks. Retry. Pray.
+
+**With FACET:**<br>
+`@output` enforces `enum: ["success","failed"]` at compile time. Invalid shape → run fails before reaching your payment service.
+
+</td>
+<td width="34%" valign="top">
+
+#### 🔄 Multi-Step Workflows
+
+**Without IOSM:**<br>
+Refactor "feels done". No metrics. No evidence. No way to compare before/after.
+
+**With IOSM:**<br>
+Baseline → hypothesis → 4 gated phases → cycle report. Simplicity 0.51 → 0.65. Tracked, reproducible, auditable.
+
+</td>
+<td width="33%" valign="top">
+
+#### 🤖 Agent Orchestration
+
+**Without contracts:**<br>
+8 parallel agents. 3 write to the same file. Output drift between runs.
+
+**With Swarm + IOSM:**<br>
+File locks prevent conflicts. Quality gates enforce standards. Deterministic dispatch — not chaos.
+
+</td>
+</tr>
 </table>
 
 ---
 
-### 👋 About Me
+## The Standard
 
-I am an AI & Platform Engineer and the author of **FACET — the Deterministic Contract Layer for AI (since 2025)**.
+FACET is not another framework or wrapper. It is a **formal contract layer** — a specification that treats AI behavior as compiled software, not probabilistic improvisation. Designed to outlive any single vendor, model, or SDK.
 
-My work focuses on a single core problem in modern AI systems:  
-**the absence of enforceable contracts.**  
-Most LLM-based systems rely on best-effort prompts, retries, and post-hoc validation — approaches that do not scale and cannot guarantee correctness.
+The broader ecosystem — compilers, agents, orchestrators — exists to **prove the standard in practice**, not to replace it.
 
-FACET was created to address this at the **standard level**, not as another framework or wrapper, but as a **formal contract layer** that treats AI behavior as *compiled software*, not probabilistic improvisation.
+> **Implementations may evolve. The contract remains.**
 
-The FACET standard defines:
-- deterministic tool-calling contracts  
-- canonical, provider-independent intermediate representation  
-- reproducible context allocation and execution semantics  
-- explicit conformance levels and adapter requirements  
+**IOSM** — *Improve → Optimize → Shrink → Modularize* — is the companion methodology: a reproducible engineering process with strict phases, quality gates, and six canonical metrics.
 
-This work is documented as a public specification and reference architecture, designed to outlive any single vendor, model, or SDK.
+Together: **FACET constrains execution. IOSM constrains evolution.**
 
-The broader FACET ecosystem — compilers, agents, orchestrators — exists to **prove the standard in practice**, not to replace it. Implementations may evolve; the contract remains.
+<br>
 
-**My goal is to establish deterministic contracts as a baseline expectation for AI systems — in the same way type systems, IRs, and protocols became non-negotiable in traditional software engineering.**
+<div align="center">
 
-If this direction resonates with you, start with the standard itself:
+```facet
+@input  amount:   float(min=0.01)
+@input  currency: enum["USD","EUR","GBP"]
+@output status:   enum["success","failed"]
+@output tx_id:    string(min_length=8)
+```
 
-* 📜 **FACET Standard & Specification:** https://github.com/rokoss21/facet-standard  
-* 🧠 **Design Rationale & History:** https://github.com/rokoss21/facet-standard/blob/main/RATIONALE.md  
-* 🦀 **Reference Compiler (Rust):** https://github.com/rokoss21/facet-compiler  
+<sub>Invalid output never reaches the payment system. The contract is enforced before generation, not after.</sub>
+
+</div>
 
 ---
 
-## 🚀 The FACET Ecosystem
+## ⚡ The Core
 
-My work is centered around the **FACET ecosystem** — a vertically integrated, contract-first stack designed to make AI interactions as **rigorous, predictable, and scalable** as modern cloud infrastructure.
+<table>
+<tr>
 
-Each layer builds upon the previous one, forming a coherent system:
-from a deterministic language and formal specification,
-through a high-performance Rust compiler,
-to distributed orchestration and production-grade execution.
+<td width="25%" align="center" valign="top">
 
-FACET is not a collection of tools.
-It is an **architecture**.
+<a href="https://github.com/rokoss21/facet-standard">
+  <img src="./assets/card_facet_standard.png" alt="FACET Standard" width="100%">
+</a>
+
+**[FACET Standard](https://github.com/rokoss21/facet-standard)**<br>
+<sub><b>Normative Specification</b></sub>
+
+<img src="https://img.shields.io/github/stars/rokoss21/facet-standard?style=flat-square&color=e3b341&label=★">
+
+<sub>v2.1.3 · REC-PROD<br>NADL · FTS · R-DAG · Token Box<br>Policy · Guards · Conformance</sub>
+
+</td>
+
+<td width="25%" align="center" valign="top">
+
+<a href="https://github.com/rokoss21/facet-compiler">
+  <img src="./assets/card_facet_compiler.png" alt="FACET Compiler" width="100%">
+</a>
+
+**[facet-compiler](https://github.com/rokoss21/facet-compiler)**<br>
+<sub><b>Reference Implementation</b></sub>
+
+<img src="https://img.shields.io/github/stars/rokoss21/facet-compiler?style=flat-square&color=e3b341&label=★">
+
+<sub>Rust · fct 0.1.2 · 6 crates<br>AST → FTS → R-DAG → Canonical JSON<br>Other impls must match its behavior</sub>
+
+</td>
+
+<td width="25%" align="center" valign="top">
+
+<a href="https://github.com/rokoss21/IOSM">
+  <img src="./assets/card_iosm_spec.png" alt="IOSM Specification" width="100%">
+</a>
+
+**[IOSM Specification](https://github.com/rokoss21/IOSM)**<br>
+<sub><b>Engineering Methodology</b></sub>
+
+<img src="https://img.shields.io/github/stars/rokoss21/IOSM?style=flat-square&color=e3b341&label=★">
+
+<sub>v1.0 · JSON schemas · Validator<br>4 phases · 6 metrics · Quality gates<br>Reproducible improvement cycles</sub>
+
+</td>
+
+<td width="25%" align="center" valign="top">
+
+<a href="https://github.com/rokoss21/FACET_mcp">
+  <img src="./assets/card_facet_mcp.png" alt="FACET MCP" width="100%">
+</a>
+
+**[FACET MCP](https://github.com/rokoss21/FACET_mcp)**<br>
+<sub><b>Execution Boundary</b></sub>
+
+<img src="https://img.shields.io/npm/v/facet-mcp-server?style=flat-square&color=cb3837&label=npm">
+
+<sub>SIMD 3.7× · WebSocket · 70 tests<br>execute · lenses · validate<br>Protocol adapter & host</sub>
+
+</td>
+
+</tr>
+</table>
+
+---
+
+## ⚙️ IOSM CLI — The Runtime
+
+> Not just another CLI agent. A full **AI engineering runtime** that implements the IOSM methodology as a terminal-native execution environment.
+
+<div align="center">
+
+<a href="https://github.com/rokoss21/iosm-cli">
+  <img src="./assets/iosm_cli_screenshot.png" alt="IOSM CLI" width="80%">
+</a>
+
+<br><br>
+
+<img src="https://img.shields.io/npm/v/iosm-cli?style=for-the-badge&color=cb3837&label=npm"> &nbsp; <img src="https://img.shields.io/github/stars/rokoss21/iosm-cli?style=for-the-badge&color=e3b341&label=★">
+
+</div>
+
+<br>
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+**What it is:**
+- Terminal TUI with interactive session management
+- 15+ LLM providers (OpenAI, Anthropic, Gemini, Groq, Ollama, OpenRouter…)
+- MCP server integration (1/1 connected, extensible)
+- Built-in skills: `astro-report`, `claude-md-master`, `mcp-builder`, `skill-creator`
+- Checkpoint system for session recovery
+
+</td>
+<td width="50%" valign="top">
+
+**What makes it different:**
+- Not a chat wrapper — an **IOSM runtime**: it enforces improvement cycles, gates, and metrics
+- Contract-aware: understands FACET documents natively
+- Multi-mode execution: `standard`, `singular`, `semantic`, `contract`
+- Project memory and context management
+- RPC bridge for programmatic access
+
+</td>
+</tr>
+</table>
 
 ```sh
-$ facetctl diag --arch --wide
-[12:07:53] INFO  loading FACET language ............. OK
-[12:07:53] INFO  loading MCP runtime ................ OK
-[12:07:54] INFO  connecting RMCP orchestrator ....... OK
-[12:07:54] INFO  shared services: policy | artifacts | event-bus
+npm install -g iosm-cli
+cd your-project && iosm init
+iosm                           # launches TUI — 507 models ready
 ```
 
-### Architectural Overview
+---
+
+## 🏗 The Stack
+
+> FACET is not a collection of tools. It is an **architecture**.<br>
+> Each project has a specific architectural responsibility. Each project exists to fulfill it and nothing else.
 
 ```
-+-----------------------+  +-----------------------+  +-----------------------+
-|     FACET Language    |  |     FACET Compiler    |  |      FSSG Publisher   |
-+-----------------------+  +-----------------------+  +-----------------------+
-| Deterministic grammar |  | High-performance Rust |  | Deterministic builds  |
-| Pure lenses (|>)      |  | Type checking (FTS)   |  | HTML / Markdown       |
-| Output contracts      |  | Token Box Model       |  | Artifact generation   |
-| Canonical JSON (IR)   |  | Lens pipeline engine  |  | Byte-stable output    |
-+-----------------------+  +-----------------------+  +-----------------------+
+   SPECIFICATION                 COMPILERS                    RUNTIME
+  ┌──────────────┐          ┌──────────────────┐        ┌──────────────────┐
+  │ facet-        │          │ facet-compiler   │        │ iosm-cli         │
+  │ standard     │  ──────▶ │ (Rust, fct)      │ ─────▶ │ (TypeScript)     │
+  │              │          │                  │        │                  │
+  │ IOSM spec    │          │ FACET Language   │        │ swarm-iosm       │
+  │              │          │ (Python parser)  │        │ (Python)         │
+  │ soul.md      │          │                  │        │                  │
+  └──────────────┘          │ FACET MCP Server │        │ rmcp-protocol    │
+    Defines the rules       │ (SIMD adapter)   │        │ (FastAPI)        │
+                            └──────────────────┘        └──────────────────┘
+                              Implements them             Executes & scales
 
-+-----------------------+  +-----------------------+  +-----------------------+
-|      Policy Store     |  |   Artifact Registry   |  |     Event Bus / IO    |
-+-----------------------+  +-----------------------+  +-----------------------+
-| RBAC & approvals     |  | Contracts & schemas    |  | Topics & queues       |
-| Guard rules          |  | Prompts & lenses       |  | Tool events           |
-| Audit logs           |  | Versioned modules      |  | Tracing & telemetry   |
-| Config management    |  | Reproducible inputs    |  | Deterministic IO      |
-+-----------------------+  +-----------------------+  +-----------------------+
+                                        │
+                                        ▼
+
+                              PROOF & CONSUMERS
+                            ┌──────────────────┐
+                            │ FACET-AGENTS     │  ← conformance testbed
+                            │ FACET-FSSG       │  ← canonical JSON consumer
+                            │ astrovisor-mcp   │  ← real-world MCP adapter
+                            └──────────────────┘
+                              Validates the contracts
 ```
 
-### Operational Capabilities
+<table>
+<tr>
+<td width="50%" valign="top">
 
-```sh
-fct build app.facet                     # Compile FACET to Canonical JSON
-fct run app.facet --budget 4096         # Execute with strict token bounds
-fct test app.facet                      # Run deterministic tests (golden)
-facetctl lint ./specs/app.facet         # Validate contracts & constraints
-fssg build -c site.config.json          # Generate deterministic artifacts
-facetctl logs --follow                  # Observe agent execution
-```
+**The architecture is self-correcting.**
 
-### What this architecture enables
+If FACET-AGENTS can't reproduce behavior across providers — the standard has a gap. If FSSG can't produce byte-identical output from canonical JSON — the IR spec is wrong. If swarm-iosm needs to override quality gates — the methodology is incomplete.
 
-* **Deterministic execution** — identical inputs produce identical outputs
-* **Contract-first AI systems** — invalid states are rejected before runtime
-* **Provider independence** — OpenAI, Anthropic, Gemini as interchangeable backends
-* **Reproducibility & auditability** — snapshot testing, stable diffs, stable hashes
-* **Scalability by design** — from single-agent workflows to distributed fleets
+</td>
+<td width="50%" valign="top">
 
-Each layer is a direct application of the same core principle:
+**What each layer proves:**
 
-> **AI systems should be engineered, not improvised.**
+- **Specification** → the rules are expressible and complete
+- **Compilers** → the rules are implementable and enforceable
+- **Runtime** → the rules hold under real execution pressure
+- **Proof** → the rules survive contact with production
 
----
-
-### 👑 **[FACET Language](https://github.com/rokoss21/FACET)**
-
-**(Normative Language Definition)**
-
-> The **language-level definition of the FACET standard**.
-> A deterministic markup language for AI instructions, defining contracts, interfaces, and execution semantics.
-
-This repository defines:
-
-* the surface syntax of FACET
-* contract constructs (`@input`, `@output`, `@interface`)
-* deterministic composition primitives (lenses, pipelines)
-
-It is the **authoritative source of the language layer**, not an application framework.
-
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/Language_Design-007ACC?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Parsing-orange?style=for-the-badge">
-</p>
+</td>
+</tr>
+</table>
 
 ---
 
-### 🦀 **[FACET Compiler](https://github.com/rokoss21/facet-compiler)**
+## 🔌 Ecosystem & Proof
 
-**(Reference Compiler Implementation)**
+<table>
+<tr>
 
-> The **reference compiler for the FACET standard**.
-> Implements the specification exactly, without extensions or shortcuts.
+<td width="25%" align="center" valign="top">
 
-This compiler:
+<a href="https://github.com/rokoss21/swarm-iosm">
+  <img src="./assets/card_swarm_iosm.png" alt="Swarm-IOSM" width="100%">
+</a>
 
-* parses FACET into a strict AST
-* enforces the Facet Type System (FTS)
-* builds the Reactive DAG (R-DAG)
-* emits Canonical JSON as the intermediate representation
+**[swarm-iosm](https://github.com/rokoss21/swarm-iosm)**<br>
+<sub><b>Parallel Orchestration</b></sub>
 
-Other implementations are expected to match its observable behavior.
+<img src="https://img.shields.io/github/stars/rokoss21/swarm-iosm?style=flat-square&color=e3b341&label=★">
 
-<p>
-  <img src="https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white">
-  <img src="https://img.shields.io/badge/Reference_Implementation-red?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Type_Safety-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Deterministic_IR-green?style=for-the-badge">
-</p>
+<sub>Python · v2.1 · Claude Code<br>Locks · Gates · Auto-spawn<br><i>Scaling layer</i></sub>
 
----
+</td>
 
-### 🤖 **[FACET Agents Ecosystem](https://github.com/rokoss21/FACET-AGENTS)**
+<td width="25%" align="center" valign="top">
 
-**(Conformance Demonstrations)**
+<a href="https://github.com/rokoss21/rmcp-protocol">
+  <img src="./assets/card_rmcp_protocol.png" alt="RMCP Protocol" width="100%">
+</a>
 
-> A collection of AI agents built **strictly on top of FACET contracts**, used to validate reproducibility, tool-calling correctness, and multi-step determinism.
+**[rmcp-protocol](https://github.com/rokoss21/rmcp-protocol)**<br>
+<sub><b>Distributed Coordination</b></sub>
 
-This repository exists to:
+<img src="https://img.shields.io/badge/coverage-89%25-10B981?style=flat-square">
 
-* stress-test the standard
-* surface edge cases
-* provide real-world failure data
+<sub>FastAPI · Facet Engine<br>Three-stage funnel · 89% coverage<br><i>Protocol & scheduling</i></sub>
 
-It is a **testbed**, not a dependency.
+</td>
 
-<p>
-  <img src="https://img.shields.io/badge/Conformance_Tests-15+-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Reproducible-purple?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Multi--Agent-green?style=for-the-badge">
-</p>
+<td width="25%" align="center" valign="top">
 
----
+<a href="https://github.com/rokoss21/FACET-AGENTS">
+  <img src="./assets/card_facet_agents.png" alt="FACET Agents" width="100%">
+</a>
 
-### ⚡ **[FACET MCP Server](https://github.com/rokoss21/FACET_mcp)**
+**[FACET-AGENTS](https://github.com/rokoss21/FACET-AGENTS)**<br>
+<sub><b>Conformance Testbed</b></sub>
 
-**(Protocol Adapter & Execution Host)**
+<img src="https://img.shields.io/badge/agents-15-5B47FB?style=flat-square">
 
-> An execution host that exposes FACET contracts to agents via a stable protocol boundary.
+<sub>15 specialists · Self-evolving<br>Orchestrator v2.1 · 6.7× faster<br><i>Validates the standard</i></sub>
 
-Used to validate:
+</td>
 
-* adapter behavior
-* tool invocation guarantees
-* isolation between contract definition and execution
+<td width="25%" align="center" valign="top">
 
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
-  <img src="https://img.shields.io/badge/Adapter_Testbed-black?style=for-the-badge">
-</p>
+<a href="https://github.com/rokoss21/FACET-FSSG">
+  <img src="./assets/facet_banner.png" alt="FACET FSSG" width="100%">
+</a>
 
----
+**[FACET-FSSG](https://github.com/rokoss21/FACET-FSSG)**<br>
+<sub><b>Canonical JSON Consumer</b></sub>
 
-### 📄 **[FSSG — FACET Static Site Generator](https://github.com/rokoss21/FACET-FSSG)**
+<img src="https://img.shields.io/github/stars/rokoss21/FACET-FSSG?style=flat-square&color=e3b341&label=★">
 
-**(Canonical JSON Consumer)**
+<sub>Static Site Generator<br>Canonical JSON → byte-stable HTML<br><i>Proves the IR works</i></sub>
 
-> Demonstrates how **Canonical JSON enables deterministic downstream systems**.
+</td>
 
-FSSG proves that:
-
-* Canonical JSON is stable enough for publishing pipelines
-* identical inputs produce byte-for-byte identical outputs
-* FACET IR is suitable for caching, diffs, and audits
-
-<p>
-  <img src="https://img.shields.io/badge/Canonical_JSON-green?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Deterministic_Builds-blue?style=for-the-badge">
-</p>
+</tr>
+</table>
 
 ---
 
-### 🧠 **[FACET Orchestrator (RMCP)](https://github.com/rokoss21/rmcp-protocol)**
+## 🛠 Technical Focus
 
-**(Scaling & Coordination Layer)**
+I work at the boundary where language design, compiler construction, execution control, and distributed orchestration meet.
 
-> A distributed orchestration engine that applies FACET contracts at scale.
-
-This project explores:
-
-* contract-aware scheduling
-* deterministic coordination across agents
-* protocol-level guarantees
-
-<p>
-  <img src="https://img.shields.io/badge/Distributed_Systems-blueviolet?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Protocol_Design-orange?style=for-the-badge">
-</p>
+**Compilers & Systems** — Rust, compiler construction (lexer → AST → IR → codegen), SIMD pipelines, deterministic execution, snapshot testing<br>
+**AI Infrastructure** — MCP servers, multi-provider LLM orchestration, agent runtimes, semantic search, tool delegation<br>
+**Architecture** — Language design (NADL), protocol design (RMCP), RFC-style specification authoring, contract-first DDD<br>
+**Platform** — CI/CD with conformance suites, deterministic builds, Kubernetes, Prometheus, IOSM-driven quality gates
 
 ---
 
-## 🛠️ Core Competencies & Technical Focus
+## 🗺 Other Work
 
-### AI Systems & Intelligence Engineering
+<table>
+<tr>
+<td width="25%" align="center" valign="top">
 
-* Deterministic AI system design
-* AI orchestration & multi-agent coordination
-* Contract-based tool calling & structured generation
-* Agent execution models and reproducibility guarantees
-* Failure-mode analysis of LLM systems across providers
+**[soul.md](https://github.com/rokoss21/soul.md)**<br>
+<img src="https://img.shields.io/github/stars/rokoss21/soul.md?style=flat-square&color=e3b341&label=★"><br>
+<sub>Portable spec for AI agent personas<br>Provider-agnostic · MD/YAML</sub>
 
-### Platform & Backend Engineering
+</td>
+<td width="25%" align="center" valign="top">
 
-* High-performance systems (SIMD-aware design)
-* Asynchronous and event-driven architectures
-* Distributed systems & coordination protocols
-* API and protocol design for long-lived systems
-* Runtime isolation and execution boundaries
+**[astrovisor-mcp](https://github.com/rokoss21/astrovisor-mcp)**<br>
+<img src="https://img.shields.io/github/stars/rokoss21/astrovisor-mcp?style=flat-square&color=e3b341&label=★"><br>
+<sub>50 astrology tools via MCP<br>Claude Desktop · TypeScript</sub>
 
-### Software Architecture & Standards
+</td>
+<td width="25%" align="center" valign="top">
 
-* Contract-first architecture
-* Language and protocol design
-* Deterministic execution models
-* Domain-driven design (DDD)
-* Specification writing (RFC-style, normative language)
+**[enigmo](https://github.com/rokoss21/enigmo)**<br>
+<img src="https://img.shields.io/github/stars/rokoss21/enigmo?style=flat-square&color=e3b341&label=★"><br>
+<sub>E2EE messaging platform<br>Ed25519/X25519 · Dart · Zero-knowledge</sub>
 
-### Languages & Ecosystems
+</td>
+<td width="25%" align="center" valign="top">
 
-* **Rust** — Expert
+**[rift-spec](https://github.com/rokoss21/rift-spec)**<br>
+<img src="https://img.shields.io/github/stars/rokoss21/rift-spec?style=flat-square&color=e3b341&label=★"><br>
+<sub>Next-gen UDP transport protocol<br>Mobile-first · Noise crypto</sub>
 
-  * Compiler construction
-  * Deterministic execution engines
-  * Memory-safe high-performance systems
-  * Zero-cost abstractions
-
-* **Python** — Expert
-
-  * AI tooling and orchestration
-  * Performance tuning (NumPy, Numba)
-  * Packaging and distribution (PyPI)
-  * Async systems and agent runtimes
-
-* **JavaScript / TypeScript** — Proficient
-
-  * Node.js services
-  * SDK and adapter development
-  * Tooling and integration layers
-
-### DevOps, Tooling & Quality
-
-* CI/CD pipelines (GitHub Actions)
-* Deterministic build systems
-* Test-driven development (TDD)
-* Snapshot / golden testing methodologies
-* Release engineering & versioning discipline
+</td>
+</tr>
+</table>
 
 ---
 
-### 💬 Let's Connect
+<div align="center">
 
-* **Email:** `ecsiar@gmail.com`
-* **GitHub Discussions:** Feel free to start a conversation on any of the project repositories.
-* **Contributing:** I welcome contributions to my open-source projects. Check out the `CONTRIBUTING.md` files to get started.
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=rokoss21&theme=github-dark-blue&hide_border=true&background=0d1117&ring=58a6ff&fire=58a6ff&currStreakLabel=e6edf3" width="54%" />
+
+<br><br>
+
+**📜 [Standard](https://github.com/rokoss21/facet-standard)** · **🦀 [Compiler](https://github.com/rokoss21/facet-compiler)** · **📐 [IOSM](https://github.com/rokoss21/IOSM)** · **⚙️ [CLI](https://github.com/rokoss21/iosm-cli)** · **🐝 [Swarm](https://github.com/rokoss21/swarm-iosm)**
+
+<br>
+
+<img src="https://komarev.com/ghpvc/?username=rokoss21&label=Profile%20views&color=0e75b6&style=flat" />
+
+<br><br>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:161b22,100:1a1b27&height=100&section=footer" width="100%" />
+
+</div>

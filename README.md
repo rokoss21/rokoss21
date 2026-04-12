@@ -81,6 +81,9 @@ Two ecosystems. One thesis: **AI systems should be engineered, not improvised.**
 
 <div align="center">
 
+<img src="./assets/banner_facet.png" alt="FACET" width="100%">
+<br><br>
+
 <h1><a href="https://github.com/rokoss21/facet-standard" style="text-decoration:none;">FACET Standard</a></h1>
 
 <p><strong>The normative specification for deterministic, compiled AI execution.</strong></p>

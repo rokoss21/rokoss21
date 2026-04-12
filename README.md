@@ -387,7 +387,7 @@ I work at the boundary where language design, compiler construction, execution c
 <td width="25%" align="center" valign="top">
 
 <a href="https://github.com/rokoss21/rift-spec">
-  <img src="./assets/card_rift_spec.png" alt="rift-spec" width="100%">
+  <img src="./assets/card_rift.png" alt="rift-spec" width="100%">
 </a>
 
 **[rift-spec](https://github.com/rokoss21/rift-spec)**<br>

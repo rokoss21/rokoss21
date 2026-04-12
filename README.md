@@ -250,9 +250,11 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 | `/memory` | Persistent project notes that survive session boundaries — context that never disappears |
 | `/bg` | Background process manager — run dev servers, watchers, long tasks with `list`, `logs`, `stop` |
 
-&nbsp;
 
-**`4 Profiles`** &nbsp; `full` · `plan` · `meta` · `iosm` + specialist subagent profiles &emsp; **`7 Modes`** &nbsp; TUI · Print · JSON stream · JSON-RPC · Telegram · CI · SDK &emsp; **`66 Extensions`** &nbsp; Tools · Hooks · UI · Commands + 12 SDK examples &emsp; **`Policy Engine v2`** &nbsp; Layered permissions · Trust ledger · Sandbox
+| 4 Profiles | 7 Integration Modes | 66 Extension Examples | Policy Engine v2 |
+|:--:|:--:|:--:|:--:|
+| `full` · `plan` · `meta` · `iosm` | TUI · Print · JSON stream | Tools · Hooks · UI · Commands | Layered permissions · Trust ledger |
+| + specialist subagent profiles | JSON-RPC · Telegram · CI · SDK | + 12 SDK examples | Per-tool decisions · Sandbox |
 
 **Controlled execution workflow:**
 

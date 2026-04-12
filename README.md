@@ -424,12 +424,46 @@ Every repository is an assertion that the standard works.
 
 ## 🛠 Technical Focus
 
-I work at the boundary where language design, compiler construction, execution control, and distributed orchestration meet.
+> I work at the boundary where formal language design, compiler construction, and distributed AI orchestration meet.
 
-**Compilers & Systems** — Rust, compiler construction (lexer → AST → IR → codegen), SIMD pipelines, deterministic execution, snapshot testing<br>
-**AI Infrastructure** — MCP servers, multi-provider LLM orchestration, agent runtimes, semantic search, tool delegation<br>
-**Architecture** — Language design (NADL), protocol design (RMCP), RFC-style specification authoring, contract-first DDD<br>
-**Platform** — CI/CD with conformance suites, deterministic builds, Kubernetes, Prometheus, IOSM-driven quality gates
+<table>
+<tr>
+<td width="50%" valign="top">
+
+#### Systems & Compilers
+`Rust` `TypeScript` `Python` `SIMD`
+
+Parser design (lexer → AST → IR → codegen), static analysis, deterministic execution limits, and byte-stable intermediate representations.
+
+</td>
+<td width="50%" valign="top">
+
+#### AI Infrastructure
+`MCP` `Agents` `Orchestration` `Runtimes`
+
+Multi-provider LLM routing, context injection, semantic search, parallel subagent orchestration, and filesystem-level execution locks.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### Formal Architecture
+`NADL` `RMCP` `Contracts` `RFCs`
+
+Neural Architecture Description Language design, capability-based protocols, deterministic schemas, and contract-first DDD.
+
+</td>
+<td width="50%" valign="top">
+
+#### Platforms & Quality
+`IOSM` `Metrics` `CI/CD` `Kubernetes`
+
+Algorithmic quality gates, metric-driven phased refactoring, reproducible delivery cycles, and automated AI conformance testbeds.
+
+</td>
+</tr>
+</table>
 
 ---
 

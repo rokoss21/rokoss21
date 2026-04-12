@@ -322,7 +322,7 @@ If FACET-AGENTS can't reproduce behavior across providers — the standard has a
 <td width="25%" align="center" valign="top">
 
 <a href="https://github.com/rokoss21/FACET-FSSG">
-  <img src="./assets/facet_banner.png" alt="FACET FSSG" width="100%">
+  <img src="./assets/card_facet_fssg.png" alt="FACET FSSG" width="100%">
 </a>
 
 **[FACET-FSSG](https://github.com/rokoss21/FACET-FSSG)**<br>
@@ -356,29 +356,41 @@ I work at the boundary where language design, compiler construction, execution c
 <tr>
 <td width="25%" align="center" valign="top">
 
+<a href="https://github.com/rokoss21/soul.md">
+  <img src="./assets/card_soul_md.png" alt="soul.md" width="100%">
+</a>
+
 **[soul.md](https://github.com/rokoss21/soul.md)**<br>
-<img src="https://img.shields.io/github/stars/rokoss21/soul.md?style=flat-square&color=e3b341&label=★"><br>
 <sub>Portable spec for AI agent personas<br>Provider-agnostic · MD/YAML</sub>
 
 </td>
 <td width="25%" align="center" valign="top">
 
+<a href="https://github.com/rokoss21/astrovisor-mcp">
+  <img src="./assets/card_astrovisor_mcp.png" alt="astrovisor-mcp" width="100%">
+</a>
+
 **[astrovisor-mcp](https://github.com/rokoss21/astrovisor-mcp)**<br>
-<img src="https://img.shields.io/github/stars/rokoss21/astrovisor-mcp?style=flat-square&color=e3b341&label=★"><br>
 <sub>50 astrology tools via MCP<br>Claude Desktop · TypeScript</sub>
 
 </td>
 <td width="25%" align="center" valign="top">
 
+<a href="https://github.com/rokoss21/enigmo">
+  <img src="./assets/card_enigmo.png" alt="enigmo" width="100%">
+</a>
+
 **[enigmo](https://github.com/rokoss21/enigmo)**<br>
-<img src="https://img.shields.io/github/stars/rokoss21/enigmo?style=flat-square&color=e3b341&label=★"><br>
 <sub>E2EE messaging platform<br>Ed25519/X25519 · Dart · Zero-knowledge</sub>
 
 </td>
 <td width="25%" align="center" valign="top">
 
+<a href="https://github.com/rokoss21/rift-spec">
+  <img src="./assets/card_rift_spec.png" alt="rift-spec" width="100%">
+</a>
+
 **[rift-spec](https://github.com/rokoss21/rift-spec)**<br>
-<img src="https://img.shields.io/github/stars/rokoss21/rift-spec?style=flat-square&color=e3b341&label=★"><br>
 <sub>Next-gen UDP transport protocol<br>Mobile-first · Noise crypto</sub>
 
 </td>

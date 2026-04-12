@@ -79,15 +79,30 @@ Two ecosystems. One thesis: **AI systems should be engineered, not improvised.**
 
 ---
 
-## The Standard
+<div align="center">
 
-FACET is not another framework or wrapper. It is a **formal contract layer** — a specification that treats AI behavior as compiled software, not probabilistic improvisation.
+<h1><a href="https://github.com/rokoss21/facet-standard" style="text-decoration:none;">FACET Standard</a></h1>
+
+<p><strong>The normative specification for deterministic, compiled AI execution.</strong></p>
+
+<p>
+  <a href="https://github.com/rokoss21/facet-standard"><img src="https://img.shields.io/github/stars/rokoss21/facet-standard?style=for-the-badge&color=e3b341&label=%E2%98%85"></a>
+  <img src="https://img.shields.io/badge/version-2.1.3-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/status-REC--PROD-10B981?style=for-the-badge">
+</p>
+
+<br>
+
+> **The Architectural Priority**<br>
+> Engineers rush to use runtimes and orchestrators (`swarm-iosm`, `iosm-cli`), but tools are ephemeral. The **Standard** is the permanent foundation. Without a strict contract layer, multi-agent orchestration is just parallel chaos. *This repository* is the source of truth for the entire ecosystem. **Read the standard first.**
+
+</div>
+
+<br>
+
+FACET is not another framework or wrapper. It is a **formal contract layer** that treats AI behavior as compiled software, not probabilistic improvisation. 
 
 The standard defines a **Neural Architecture Description Language (NADL)** with typed inputs, constrained outputs, deterministic variable evaluation (R-DAG), explicit token budget allocation (Token Box Model), and fail-closed runtime guards. Every contract compiles to **Canonical JSON** — a stable, diffable, cacheable intermediate representation that is identical regardless of which model, provider, or runtime executes it.
-
-The broader ecosystem — compilers, agents, orchestrators — exists to **prove the standard in practice**, not to replace it. Designed to outlive any single vendor, model, or SDK.
-
-> **Implementations may evolve. The contract remains.**
 
 ```facet
 @system

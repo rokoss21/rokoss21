@@ -162,7 +162,7 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 **[FACET Standard](https://github.com/rokoss21/facet-standard)**<br>
 <sub><b>Normative Specification</b></sub>
 
-<img src="https://img.shields.io/github/stars/rokoss21/facet-standard?style=flat-square&color=e3b341&label=%E2%98%85">
+<a href="https://github.com/rokoss21/facet-standard"><img src="https://img.shields.io/github/stars/rokoss21/facet-standard?style=flat-square&color=e3b341&label=%E2%98%85"></a>
 
 <sub>v2.1.3 · REC-PROD<br>NADL · FTS · R-DAG · Token Box<br>Policy · Guards · Conformance</sub>
 
@@ -177,7 +177,7 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 **[facet-compiler](https://github.com/rokoss21/facet-compiler)**<br>
 <sub><b>Reference Implementation</b></sub>
 
-<img src="https://img.shields.io/github/stars/rokoss21/facet-compiler?style=flat-square&color=e3b341&label=%E2%98%85">
+<a href="https://github.com/rokoss21/facet-compiler"><img src="https://img.shields.io/github/stars/rokoss21/facet-compiler?style=flat-square&color=e3b341&label=%E2%98%85"></a>
 
 <sub>Rust · fct 0.1.2 · 6 crates<br>AST → FTS → R-DAG → Canonical JSON<br>Other impls must match its behavior</sub>
 
@@ -192,7 +192,7 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 **[IOSM Specification](https://github.com/rokoss21/IOSM)**<br>
 <sub><b>Engineering Methodology</b></sub>
 
-<img src="https://img.shields.io/github/stars/rokoss21/IOSM?style=flat-square&color=e3b341&label=%E2%98%85">
+<a href="https://github.com/rokoss21/IOSM"><img src="https://img.shields.io/github/stars/rokoss21/IOSM?style=flat-square&color=e3b341&label=%E2%98%85"></a>
 
 <sub>v1.0 · JSON schemas · Validator<br>4 phases · 6 metrics · Quality gates<br>Reproducible improvement cycles</sub>
 
@@ -207,7 +207,7 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 **[FACET MCP](https://github.com/rokoss21/FACET_mcp)**<br>
 <sub><b>Execution Boundary</b></sub>
 
-<img src="https://img.shields.io/npm/v/facet-mcp-server?style=flat-square&color=cb3837&label=npm">
+<a href="https://www.npmjs.com/package/facet-mcp-server"><img src="https://img.shields.io/npm/v/facet-mcp-server?style=flat-square&color=cb3837&label=npm"></a>
 
 <sub>SIMD 3.7× · WebSocket · 70 tests<br>execute · lenses · validate<br>Protocol adapter & host</sub>
 
@@ -231,7 +231,7 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 
 <br><br>
 
-<img src="https://img.shields.io/npm/v/iosm-cli?style=for-the-badge&color=cb3837&label=npm"> &nbsp; <img src="https://img.shields.io/github/stars/rokoss21/iosm-cli?style=for-the-badge&color=e3b341&label=%E2%98%85"> &nbsp; <img src="https://img.shields.io/badge/models-507-58a6ff?style=for-the-badge"> &nbsp; <img src="https://img.shields.io/badge/providers-15+-8b949e?style=for-the-badge">
+<a href="https://www.npmjs.com/package/iosm-cli"><img src="https://img.shields.io/npm/v/iosm-cli?style=for-the-badge&color=cb3837&label=npm"></a> &nbsp; <a href="https://github.com/rokoss21/iosm-cli"><img src="https://img.shields.io/github/stars/rokoss21/iosm-cli?style=for-the-badge&color=e3b341&label=%E2%98%85"></a> &nbsp; <img src="https://img.shields.io/badge/models-507-58a6ff?style=for-the-badge"> &nbsp; <img src="https://img.shields.io/badge/providers-15+-8b949e?style=for-the-badge">
 
 </div>
 
@@ -366,7 +366,7 @@ Every repository is an assertion that the standard works.
 **[swarm-iosm](https://github.com/rokoss21/swarm-iosm)**<br>
 <sub><b>Parallel Orchestration</b></sub>
 
-<img src="https://img.shields.io/github/stars/rokoss21/swarm-iosm?style=flat-square&color=e3b341&label=%E2%98%85">
+<a href="https://github.com/rokoss21/swarm-iosm"><img src="https://img.shields.io/github/stars/rokoss21/swarm-iosm?style=flat-square&color=e3b341&label=%E2%98%85"></a>
 
 <sub>Python · v2.1 · Claude Code<br>Locks · Gates · Auto-spawn<br><i>Scaling layer</i></sub>
 
@@ -411,7 +411,7 @@ Every repository is an assertion that the standard works.
 **[FACET-FSSG](https://github.com/rokoss21/FACET-FSSG)**<br>
 <sub><b>Canonical JSON Consumer</b></sub>
 
-<img src="https://img.shields.io/github/stars/rokoss21/FACET-FSSG?style=flat-square&color=e3b341&label=%E2%98%85">
+<a href="https://github.com/rokoss21/FACET-FSSG"><img src="https://img.shields.io/github/stars/rokoss21/FACET-FSSG?style=flat-square&color=e3b341&label=%E2%98%85"></a>
 
 <sub>Static Site Generator<br>Canonical JSON → byte-stable HTML<br><i>Proves the IR works</i></sub>
 

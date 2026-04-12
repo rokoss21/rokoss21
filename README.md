@@ -237,6 +237,8 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 
 <br>
 
+IOSM CLI is a terminal-native AI engineering runtime built for engineers who need more than a chat window. It connects to 507 models across 15+ providers, but that's not the point. The point is what happens after the model responds: contracts enforce scope, orchestration splits complex work across parallel agents with file-level locking, quality gates reject substandard output, and every change is checkpointed so you can roll back anything. It ships with the IOSM methodology built in — the same 4-phase cycle, 6 metrics, and quality gates that the specification defines, executable directly from your terminal against your actual codebase.
+
 | Command | What it does |
 |:--|:--|
 | `/contract` | Engineering contract editor — scope, constraints, quality gates, Definition of Done |
@@ -259,11 +261,11 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 **Controlled execution workflow:**
 
 ```
-/contract                     ←  Define scope, constraints, quality gates, DoD
-/singular "Refactor auth"     ←  Baseline scan → 3 options with trade-offs
-/swarm run --max-parallel 3   ←  Scopes → Locks → Gates → Checkpoints → Done
-/swarm watch                  ←  Live status: tasks, budget, ETA, critical path
-/iosm 0.95 --max-iterations 5 ← Run IOSM cycle targeting Index ≥ 0.95
+/contract                          ←  Define scope, constraints, quality gates, DoD
+/singular "Refactor auth"          ←  Baseline scan → 3 options with trade-offs
+/swarm run --max-parallel 3        ←  Scopes → Locks → Gates → Checkpoints → Done
+/swarm watch                       ←  Live status: tasks, budget, ETA, critical path
+/iosm 0.95 --max-iterations 5     ←  Run IOSM cycle targeting Index ≥ 0.95
 ```
 
 ```sh

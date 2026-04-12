@@ -239,57 +239,29 @@ The broader ecosystem — compilers, agents, orchestrators — exists to **prove
 
 | Command | What it does |
 |:--|:--|
-| `/contract` | Interactive engineering contract editor — scope, constraints, quality gates, Definition of Done |
-| `/singular` | Feature feasibility analyzer: baseline scan → agent analysis → 3 implementation options with trade-offs |
-| `/swarm` | Multi-agent orchestration runtime: `run`, `from-singular`, `watch`, `retry`, `resume` — with file locks and quality gates |
-| `/ultrathink` | Deep multi-iteration read-only analysis with self-check checkpoints — up to 12 passes of focused reasoning |
-| `/orchestrate` | Manual multi-agent delegation with parallel execution, profile assignment, and shared memory |
-| `/iosm` | Run a full IOSM improvement cycle targeting a specific Index score — `plan` → `status` → `report` |
-| `/checkpoint` | Save named rollback points. `/rollback` restores instantly. Filesystem-level undo across any operation |
-| `/semantic` | Semantic search manager — setup, auto-index, query across entire codebase with embeddings |
-| `/model` | Provider-first model selector — 507 models across 15+ providers, switchable mid-session |
+| `/contract` | Engineering contract editor — scope, constraints, quality gates, Definition of Done |
+| `/singular` | Feature feasibility: baseline scan → agent analysis → 3 implementation options with trade-offs |
+| `/swarm` | Multi-agent orchestration: `run`, `watch`, `retry`, `resume` — file locks and quality gates |
+| `/ultrathink` | Deep multi-iteration read-only analysis with self-check checkpoints — up to 12 passes |
+| `/orchestrate` | Manual multi-agent delegation with parallel execution, profile assignment, shared memory |
+| `/iosm` | Full IOSM improvement cycle targeting a specific Index score — `plan` → `status` → `report` |
+| `/checkpoint` | Save named rollback points. `/rollback` restores instantly. Filesystem-level undo |
+| `/semantic` | Semantic search — setup, auto-index, query across entire codebase with embeddings |
 | `/memory` | Persistent project notes that survive session boundaries — context that never disappears |
-| `/mcp` | MCP server manager — add, configure, connect external tools as first-class capabilities |
 | `/bg` | Background process manager — run dev servers, watchers, long tasks with `list`, `logs`, `stop` |
 
-<table>
-<tr>
-<td width="25%" align="center">
+&nbsp;
 
-**4 Profiles**<br>
-<sub><code>full</code> · <code>plan</code> · <code>meta</code> · <code>iosm</code><br>+ specialist subagent profiles</sub>
-
-</td>
-<td width="25%" align="center">
-
-**7 Integration Modes**<br>
-<sub>TUI · Print · JSON stream<br>JSON-RPC · Telegram · CI · SDK</sub>
-
-</td>
-<td width="25%" align="center">
-
-**66 Extension Examples**<br>
-<sub>Tools · Hooks · UI · Commands<br>+ 12 SDK examples</sub>
-
-</td>
-<td width="25%" align="center">
-
-**Policy Engine v2**<br>
-<sub>Layered permissions · Trust ledger<br>Per-tool decisions · Sandbox</sub>
-
-</td>
-</tr>
-</table>
+**`4 Profiles`** &nbsp; `full` · `plan` · `meta` · `iosm` + specialist subagent profiles &emsp; **`7 Modes`** &nbsp; TUI · Print · JSON stream · JSON-RPC · Telegram · CI · SDK &emsp; **`66 Extensions`** &nbsp; Tools · Hooks · UI · Commands + 12 SDK examples &emsp; **`Policy Engine v2`** &nbsp; Layered permissions · Trust ledger · Sandbox
 
 **Controlled execution workflow:**
 
 ```
-/contract                       ← Define scope, constraints, quality gates, DoD
-/singular "Refactor auth"       ← Baseline scan → 3 implementation options with trade-offs
-                                   → Select option → "Start with Swarm" or manual
-/swarm run --max-parallel 3     ← Scopes → Locks → Gates → Checkpoints → Done
-/swarm watch                    ← Live status: tasks, budget, ETA, critical path, locks
-/iosm 0.95 --max-iterations 5  ← Run IOSM cycle targeting Index ≥ 0.95
+/contract                     ←  Define scope, constraints, quality gates, DoD
+/singular "Refactor auth"     ←  Baseline scan → 3 options with trade-offs
+/swarm run --max-parallel 3   ←  Scopes → Locks → Gates → Checkpoints → Done
+/swarm watch                  ←  Live status: tasks, budget, ETA, critical path
+/iosm 0.95 --max-iterations 5 ← Run IOSM cycle targeting Index ≥ 0.95
 ```
 
 ```sh

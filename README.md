@@ -111,11 +111,11 @@ The standard defines a **Neural Architecture Description Language (NADL)** with 
 @system
   role: "payment-processor"
 
-@input  amount:    float(min=0.01)
-@input  currency:  enum["USD","EUR","GBP"]
+@input  amount: float(min=0.01)
+@input  currency: enum["USD","EUR","GBP"]
 
-@output status:    enum["success","failed"]
-@output tx_id:     string(min_length=8)
+@output status: enum["success","failed"]
+@output tx_id: string(min_length=8)
 
 @policy
   max_tokens: 512
@@ -283,7 +283,7 @@ IOSM CLI is a terminal-native AI engineering runtime built for engineers who nee
 /singular "Refactor auth"          ←  Baseline scan → 3 options with trade-offs
 /swarm run --max-parallel 3        ←  Scopes → Locks → Gates → Checkpoints → Done
 /swarm watch                       ←  Live status: tasks, budget, ETA, critical path
-/iosm 0.95 --max-iterations 5     ←  Run IOSM cycle targeting Index ≥ 0.95
+/iosm 0.95 --max-iterations 5      ←  Run IOSM cycle targeting Index ≥ 0.95
 ```
 
 ```sh

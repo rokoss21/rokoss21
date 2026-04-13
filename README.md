@@ -111,8 +111,8 @@ The standard defines a **Neural Architecture Description Language (NADL)** with 
 @system
   role: "payment-processor"
 
-@input  amount: float(min=0.01)
-@input  currency: enum["USD","EUR","GBP"]
+@input amount: float(min=0.01)
+@input currency: enum["USD","EUR","GBP"]
 
 @output status: enum["success","failed"]
 @output tx_id: string(min_length=8)
